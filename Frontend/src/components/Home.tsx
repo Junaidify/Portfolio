@@ -1,8 +1,10 @@
 import {} from "react";
-import { Button, Text } from "@chakra-ui/react";
+import { Button, Text, Image } from "@chakra-ui/react";
 import "../styles/style.css";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import profile_img from "../images/profile_img3.png";
+
 const Home = () => {
   return (
     <div style={{ width: "80%", height: "100vh", margin: "0 auto" }}>
@@ -50,6 +52,9 @@ const Home = () => {
         </div>
         <div id="main_div">
           <div></div>
+          <p id="profile_img">
+            <Image id="profile_img" w={"100%"} h={"100%"} src={profile_img} />
+          </p>
         </div>
       </main>
     </div>
