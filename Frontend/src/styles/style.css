@@ -91,11 +91,22 @@
   }
 }
 
-#main_div div {
+#main_div > div {
   height: 60%;
   width: 50%;
-  transform: translate(50%, 30%);
+  transform: translate(60%, 50%);
   background-color: red;
   border-top-left-radius: 50%;
-  border-bottom-right-radius: 50%;
+  border-top-right-radius: 50%;
+  position: relative;
+}
+
+#profile_img{
+  position: absolute;
+  top: 1.8vh;
+  right: 10vh;
+  width: 60%;
+  height: 80%;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%
 }
