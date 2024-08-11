@@ -4,12 +4,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCopy, faDownload } from "@fortawesome/free-solid-svg-icons";
 import "../styles/navbar.css";
 
-export const Resume = () => {
+export const Resume = ({ textColor }: { textColor: string }) => {
   return (
     <div id="resume">
       <Text
         fontSize={"3rem"}
-        color={"white"}
+        color={textColor}
         m={"5vh 1vw 3vh 0"}
         fontWeight={"bold"}
       >
@@ -19,7 +19,7 @@ export const Resume = () => {
         <Box>
           <Text
             fontSize={"1.5rem"}
-            color={"white"}
+            color={textColor}
             m={"1vh 1vw"}
             fontWeight={"bold"}
           >
@@ -28,7 +28,7 @@ export const Resume = () => {
         </Box>
 
         <Box
-          color={"white"}
+          color={textColor}
           fontWeight={"bold"}
           display={"flex"}
           alignItems={"center"}
@@ -54,7 +54,7 @@ export const Resume = () => {
         </Box>
 
         <Box
-          color={"white"}
+          color={textColor}
           fontWeight={"bold"}
           display={"flex"}
           alignContent={"center"}
@@ -78,7 +78,7 @@ export const Resume = () => {
         </Box>
 
         <Box
-          color={"white"}
+          color={textColor}
           fontWeight={"bold"}
           display={"flex"}
           alignItems={"center"}
@@ -90,7 +90,7 @@ export const Resume = () => {
         </Box>
 
         <Box
-          color={"white"}
+          color={textColor}
           display={"flex"}
           alignItems={"center"}
           columnGap={"2vw"}
@@ -103,6 +103,7 @@ export const Resume = () => {
             bg={"red"}
             fontSize={"1.2rem"}
             borderRadius={"10px"}
+            fontWeight={textColor === "black" ? "bold" : "normal"}
             onClick={() =>
               window.open("https://www.linkedin.com/in/junaidkhan23785/")
             }
@@ -115,6 +116,7 @@ export const Resume = () => {
             bg={"red"}
             fontSize={"1.2rem"}
             borderRadius={"10px"}
+            fontWeight={textColor === "black" ? "bold" : "normal"}
             onClick={() => window.open("https://github.com/junaidify")}
           >
             GitHub
@@ -125,8 +127,11 @@ export const Resume = () => {
             bg={"red"}
             fontSize={"1.2rem"}
             borderRadius={"10px"}
+            fontWeight={textColor === "black" ? "bold" : "normal"}
           >
-            Resume <FontAwesomeIcon icon={faDownload} />
+            <a href="../images/resume.pdf" download>
+              Resume <FontAwesomeIcon icon={faDownload} />
+            </a>
           </Text>
         </Box>
       </Grid>

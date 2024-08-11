@@ -5,24 +5,30 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import profile_img from "../images/profile_img3.png";
 
-const Home = () => {
+export const Home = ({ textColor }: string) => {
   return (
     <div style={{ width: "80%", height: "100vh", margin: "0 auto" }}>
       <main id="main">
         <div>
-          <Text color={"white"} mt={"15vh"} ml={"2vw"} className="heading">
+          <Text color={textColor} mt={"15vh"} ml={"2vw"} fontWeight={textColor === "black" ? "bold" : "normal"} className="heading">
             WELCOME TO MY WORLD
           </Text>
 
-          <Text color={"white"} ml={"2vw"} className="intro">
-            <span style={{ color: "red" }}>HI,</span> I'M JUNAID KHAN
+          <Text
+            color={textColor}
+            ml={"2vw"}
+            className="intro"
+            fontWeight={"bold"}
+          >
+            <span style={{ color: "red" }}>HI,</span>{" "}
+            <span style={{ fontSize: "3rem" }}>I'M JUNAID KHAN</span>
           </Text>
-          <Text color={"white"} className="bio">
+          <Text color={textColor} className="bio">
             {" "}
             A FRONTEND WEB DEVELOPER
           </Text>
           <Text
-            color={"white"}
+            color={textColor}
             w={"80%"}
             ml={"2vw"}
             mt={"9vh"}
@@ -41,7 +47,7 @@ const Home = () => {
             mt={"8vh"}
             ml={"2vw"}
             bg={"red"}
-            color={"white"}
+            color={textColor}
             className="hire_me"
           >
             Portfolio{" "}
@@ -60,5 +66,3 @@ const Home = () => {
     </div>
   );
 };
-
-export default Home;

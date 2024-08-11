@@ -9,11 +9,12 @@
   width: 80%;
   margin: 0 auto;
   height: 100vh;
+
 }
 
-.skills_box {
+/* .skills_box {
   outline: 0.5px solid white;
-}
+} */
 
 .copy:active {
   color: white;

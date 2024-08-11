@@ -10,7 +10,7 @@ import {
 } from "react";
 // import project_img from "../redux/pantaloons.png";
 
-export const Portfolio = () => {
+export const Portfolio = ({ textColor }: string) => {
   const { isLoading, isError, data } = useSelector((state: any) => state.fetch);
   useFetch();
 
@@ -21,13 +21,14 @@ export const Portfolio = () => {
 
   return (
     <div
-      style={{ width: "80%", height: "100%", margin: "0 auto", color: "white" }}
+      style={{
+        width: "80%",
+        height: "100%",
+        margin: "0 auto",
+        color: textColor,
+      }}
     >
-      <Text
-        fontSize={"3rem"}
-        pt={"5vh"}
-        fontWeight={"bold"}
-      >
+      <Text fontSize={"3rem"} pt={"5vh"} fontWeight={"bold"}>
         Projects
       </Text>
       <Grid
@@ -41,6 +42,7 @@ export const Portfolio = () => {
             (item: {
               id: Key | null | undefined;
               img: string | undefined;
+              link: string | undefined;
               title:
                 | string
                 | number
@@ -62,7 +64,10 @@ export const Portfolio = () => {
             }) => (
               <GridItem
                 key={item.id}
-                border={"1px solid white"}
+                onClick={() => window.open(item.link)}
+                border={`1px solid ${
+                  textColor === "black" ? "black" : "white"
+                }`}
                 height={"65vh"}
                 w={"100%"}
                 borderRadius={"10px"}

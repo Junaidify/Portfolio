@@ -1,7 +1,7 @@
 import { NavLink, Route, Routes } from "react-router-dom";
 import "./App.css";
 import "./styles/style.css";
-import Home from "./components/Home";
+import { Home } from "./components/Home";
 import { Portfolio } from "./components/Portfolio";
 import { Button, Text } from "@chakra-ui/react";
 import { Skills } from "./components/Skills";
@@ -9,19 +9,22 @@ import { Resume } from "./components/Resume";
 import { Feedback } from "./components/Feedback";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAffiliatetheme } from "@fortawesome/free-brands-svg-icons";
+import { useState } from "react";
 
 function App() {
+  const [currentColor, setCurrentColor] = useState<boolean>(false);
+
   return (
     <>
       <div
         style={{
           width: "100%",
           margin: "0 auto ",
-          backgroundColor: "black",
+          backgroundColor: currentColor === true ? "white" : "black",
         }}
       >
         <div id="navbar_wrapper">
-          <nav id="navbar">
+          <nav id="navbar" style={{ backgroundColor: currentColor ? "white" : "black" }}>
             <Text
               fontSize={"2xl"}
               fontWeight={"bold"}
@@ -29,8 +32,8 @@ function App() {
               color={"white"}
             >
               <NavLink to="/">
-                <span className="logo">J</span> {"   "}
-                Junaid<span className="name_logo">ify</span>
+                <span className="logo">J</span>
+                <span style={{ color: currentColor ? "black" : "white"}}>Junaid</span><span className="name_logo">ify</span>
               </NavLink>
             </Text>
 
@@ -39,7 +42,7 @@ function App() {
                 <NavLink
                   to="/"
                   style={({ isActive }) => {
-                    return { color: isActive ? "red" : "white" };
+                    return { color: isActive ? "red" : currentColor ? "black" : "white" };
                   }}
                 >
                   Home
@@ -49,7 +52,7 @@ function App() {
                 <NavLink
                   to="/portfolio"
                   style={({ isActive }) => {
-                    return { color: isActive ? "red" : "white" };
+                    return { color: isActive ? "red" : currentColor ? "black" : "white" };
                   }}
                 >
                   Portfolio
@@ -59,7 +62,7 @@ function App() {
                 <NavLink
                   to="/skills"
                   style={({ isActive }) => {
-                    return { color: isActive ? "red" : "white" };
+                    return { color: isActive ? "red" :  currentColor ? "black" : "white" };
                   }}
                 >
                   Skills
@@ -69,7 +72,7 @@ function App() {
                 <NavLink
                   to="/resume/connect"
                   style={({ isActive }) => {
-                    return { color: isActive ? "red" : "white" };
+                    return { color: isActive ? "red" :  currentColor ? "black" : "white" };
                   }}
                 >
                   Resume/Connect
@@ -79,7 +82,7 @@ function App() {
                 <NavLink
                   to="/feedback"
                   style={({ isActive }) => {
-                    return { color: isActive ? "red" : "white" };
+                    return { color: isActive ? "red" :  currentColor ? "black" : "white" };
                   }}
                 >
                   Feedback
@@ -87,18 +90,38 @@ function App() {
               </Text>
             </div>
 
-            <Button className="hire_me">
+            <Button
+              className="hire_me"
+              color={currentColor ? "white" : "black"}   
+              bg={currentColor ? "black" : "white"}           
+              onClick={() => setCurrentColor((prev) => !prev)}
+            >
               <FontAwesomeIcon icon={faAffiliatetheme} />
             </Button>
           </nav>
         </div>
 
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/skills" element={<Skills />} />
-          <Route path="/resume/connect" element={<Resume />} />
-          <Route path="/feedback" element={<Feedback />} />
+          <Route
+            path="/"
+            element={<Home textColor={currentColor ? "black" : "white"} />}
+          />
+          <Route
+            path="/portfolio"
+            element={<Portfolio textColor={currentColor ? "black" : "white"} />}
+          />
+          <Route
+            path="/skills"
+            element={<Skills textColor={currentColor ? "black" : "white"} />}
+          />
+          <Route
+            path="/resume/connect"
+            element={<Resume textColor={currentColor ? "black" : "white"} />}
+          />
+          <Route
+            path="/feedback"
+            element={<Feedback textColor={currentColor ? "black" : "white"} />}
+          />
         </Routes>
       </div>
     </>

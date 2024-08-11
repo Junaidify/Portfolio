@@ -10,7 +10,7 @@ import {
 import axios from "axios";
 import { FeedbackPropType } from "../redux/initialState";
 
-export const Feedback = () => {
+export const Feedback = ({ textColor }: { textColor: string }) => {
   const [formData, setFormData] = useState<FeedbackPropType>({
     name: "",
     email: "",
@@ -61,7 +61,7 @@ export const Feedback = () => {
       <div>
         <Grid className="feedback" color={"red"} m={"0 auto"} rowGap={"2vh"}>
           <GridItem>
-            <Text fontSize={"xl"} color={"white"} fontWeight={"bold"}>
+            <Text fontSize={"xl"} color={textColor} fontWeight={"bold"}>
               Name
             </Text>
             <Input
@@ -72,11 +72,12 @@ export const Feedback = () => {
               mt={"1vh"}
               size={"md"}
               placeholder="Name"
+              borderColor={textColor === "black" ? "black" : "white"}
             />
           </GridItem>
 
           <GridItem>
-            <Text fontSize={"xl"} color={"white"} fontWeight={"bold"}>
+            <Text fontSize={"xl"} color={textColor} fontWeight={"bold"}>
               Email:
             </Text>
 
@@ -88,11 +89,12 @@ export const Feedback = () => {
               type="email"
               mt={"1vh"}
               placeholder="Email"
+              borderColor={textColor === "black" ? "black" : "white"}
             />
           </GridItem>
 
           <GridItem>
-            <Text fontSize={"xl"} color={"white"} fontWeight={"bold"}>
+            <Text fontSize={"xl"} color={textColor} fontWeight={"bold"}>
               Message
             </Text>
 
@@ -103,6 +105,7 @@ export const Feedback = () => {
               mt={"1vh"}
               size={"md"}
               placeholder="Write your message"
+              borderColor={textColor === "black" ? "black" : "white"}
             />
           </GridItem>
 
@@ -111,7 +114,8 @@ export const Feedback = () => {
             m={"0 auto"}
             w={"30%"}
             type="submit"
-            color={"red"}
+            color={textColor === "black" ? "white" : "black"}
+            bg={textColor === "black" ? "black" : "white"}
           >
             Send
           </Button>
