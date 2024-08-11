@@ -1,0 +1,55 @@
+import { useSelector } from "react-redux";
+import { Box, Grid, GridItem, Image, Text } from "@chakra-ui/react";
+import { useFetch } from "../hooks/useFetch";
+import { Key, ReactElement, JSXElementConstructor, ReactNode, ReactPortal } from "react";
+
+export const Portfolio = () => {
+  const { isLoading, isError, data } = useSelector((state: any) => state.fetch);
+  useFetch();
+
+  if (isLoading) return <div>Loading...</div>;
+  if (isError) return <div>Error</div>;
+
+  console.log(data);
+
+  return (
+    <div style={{ width: "80%", height: "100%", margin: "0 auto", color: "white" }}>
+      <Text fontSize={"2rem"} textAlign={"center"} pt={"5vh"}>
+        Projects
+      </Text>
+      <Grid
+        templateColumns="repeat(3, 1fr)"
+        mt={"5vh"}
+        columnGap={"5vw"}
+        rowGap={"5vh"}
+      >
+        {data &&
+          data.map((item: { id: Key | null | undefined; img: string | undefined; title: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | null | undefined; description: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | null | undefined; }) => (
+            <GridItem
+            key={item.id}
+              border={"1px solid white"}
+              height={'fit-content'}
+              w={"100%"}
+              borderRadius={"10px"}
+            >
+              <Box w={"100%"} h={"57%"}>
+                <Image w={"100%"} h={"100%"} src={item.img} />
+              </Box>
+              <Box
+                display={"flex"}
+                flexDirection={"column"}
+                rowGap={"2vh"}
+                columnGap={"2vw"}
+                m={"2vh 1vw"}
+              >
+                <Text fontSize={"1.5rem"}>{item.title}</Text>
+                <Text lineHeight={"2.4vh"}>
+                  {item.description}
+                </Text>
+              </Box>
+            </GridItem>
+          ))}
+      </Grid>
+    </div>
+  );
+};

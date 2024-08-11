@@ -1,0 +1,94 @@
+.logo {
+  height: 6em;
+  padding: 0.3vh 0.8vw;
+  will-change: filter;
+  transition: filter 300ms;
+  background-color: red;
+  border-bottom-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+#navbar {
+  padding-top: 2vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 6vh;
+  color: #fff;
+}
+
+#navbar div {
+  display: flex;
+  column-gap: 4vw;
+}
+
+.name_logo {
+  color: rgb(214, 16, 16);
+}
+
+.hire_me {
+  background-color: rgb(214, 16, 16);
+  color: white;
+  padding: 1vh 1.5vw;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+}
+
+#main {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+#main div:nth-child(1) {
+  position: relative;
+}
+
+#main div:nth-child(1) .heading {
+  font-size: 0.8rem;
+}
+
+#main div:nth-child(1) .intro {
+  font-size: 3.5rem;
+}
+
+#main div:nth-child(1) .bio {
+  font-size: 1.5rem;
+  color: rgb(145, 128, 128);
+  animation: blink 2s 5s forwards linear;
+  position: absolute;
+  font-size: 1.5rem;
+  top: 28vh;
+  left: 2.2rem;
+  transition: all 2s;
+}
+
+@keyframes blink {
+  0% {
+    top: 28vh;
+    left: 3vw;
+    font-size: 2rem;
+    opacity: 0;
+  }
+  50% {
+    top: 7vh;
+    left: 2.5vw;
+    font-size: 1.7rem;
+    opacity: 0.5;
+  }
+  100% {
+    top: 28vh;
+    left: 2.2vw;
+    font-size: 1.5rem;
+    opacity: 1;
+  }
+}
+
+#main_div div {
+ height: 60%;
+ width: 50%;
+ transform: translate(50%, 50%);
+ background-color: red;
+ border-top-left-radius: 50%;
+ border-bottom-right-radius: 50%;
+}
