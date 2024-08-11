@@ -10,7 +10,7 @@ import {
 } from "react";
 // import project_img from "../redux/pantaloons.png";
 
-export const Portfolio = ({ textColor }: string) => {
+export const Portfolio = ({ textColor }: { textColor: string }) => {
   const { isLoading, isError, data } = useSelector((state: any) => state.fetch);
   useFetch();
 

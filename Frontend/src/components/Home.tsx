@@ -5,12 +5,18 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import profile_img from "../images/profile_img3.png";
 
-export const Home = ({ textColor }: string) => {
+export const Home = ({ textColor }: { textColor: string }) => {
   return (
     <div style={{ width: "80%", height: "100vh", margin: "0 auto" }}>
       <main id="main">
         <div>
-          <Text color={textColor} mt={"15vh"} ml={"2vw"} fontWeight={textColor === "black" ? "bold" : "normal"} className="heading">
+          <Text
+            color={textColor}
+            mt={"15vh"}
+            ml={"2vw"}
+            fontWeight={textColor === "black" ? "bold" : "normal"}
+            className="heading"
+          >
             WELCOME TO MY WORLD
           </Text>
 
