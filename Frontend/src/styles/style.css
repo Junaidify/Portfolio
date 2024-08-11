@@ -8,18 +8,25 @@
   border-top-right-radius: 10px;
 }
 
+#navbar_wrapper{
+  border-bottom: 1px solid red;
+}
+
 #navbar {
-  padding-top: 2vh;
+  width: 80%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 6vh;
   color: #fff;
+  margin: 0 auto;
+  padding: 2vh 1vw;
+  background-color: black;
 }
 
 #navbar div {
   display: flex;
   column-gap: 4vw;
+  align-self: center;
 }
 
 .name_logo {
@@ -32,7 +39,6 @@
   padding: 1vh 1.5vw;
   border-radius: 5px;
   border: none;
-  font-size: 1rem;
 }
 
 #main {
@@ -42,6 +48,7 @@
 
 #main div:nth-child(1) {
   position: relative;
+  margin-top: 5vh;
 }
 
 #main div:nth-child(1) .heading {
@@ -85,10 +92,10 @@
 }
 
 #main_div div {
- height: 60%;
- width: 50%;
- transform: translate(50%, 50%);
- background-color: red;
- border-top-left-radius: 50%;
- border-bottom-right-radius: 50%;
+  height: 60%;
+  width: 50%;
+  transform: translate(50%, 30%);
+  background-color: red;
+  border-top-left-radius: 50%;
+  border-bottom-right-radius: 50%;
 }

@@ -1,0 +1,34 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+#skills,
+#resume {
+  width: 80%;
+  margin: 0 auto;
+  height: 100vh;
+}
+
+.skills_box {
+  outline: 0.5px solid white;
+}
+
+.copy:active {
+  color: white;
+}
+
+#feedback_wrapper {
+  width: 80%;
+  margin: 0 auto;
+  height: 100vh;
+  position: relative;
+}
+
+#feedback_wrapper > div {
+  position: absolute;
+  top: 5%;
+  left: 30%;
+  width: 40%;
+}

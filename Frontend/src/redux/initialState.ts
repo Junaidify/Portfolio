@@ -10,3 +10,10 @@ export interface InitialState {
   isError: boolean;
   data?: Data[];
 }
+
+
+export interface FeedbackPropType {
+  name: string;
+  email: string;
+  message: string;
+}

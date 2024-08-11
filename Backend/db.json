@@ -4,43 +4,63 @@
       "id": "1",
       "title": "World Health Organization",
       "img": "./images/who.png",
-      "description": "This is a /\"Collaborative\" project developed by a team of four in five days during Masai School's Construct Week. It showcases the coding and testing skills we acquired at Masai School. We cloned the WHO website, which promotes global health and awareness."
+      "description": "This is a \"Collaborative\" project developed by a team of four in five days during Masai School's Construct Week. It showcases the coding and testing skills we acquired at Masai School. We cloned the WHO website, which promotes global health and awareness."
     },
     {
       "id": "2",
       "title": "Viatours",
       "img": "./images/viatours.png",
-      "description": "Viotours is a user-friendly platform designed to assist tourists in traveling around the world. It allows users to book hotels and travel packages with ease. Built using HTML, CSS, and Bootstrap, the platform offers key features such as booking travel packages and accessing experienced guides. During development, handling various team dynamics and project challenges was crucial. The result is an intuitive and accessible tool that enhances the travel experience for users."
+      "description": " \"Viotours\" is a user-friendly platform designed to assist tourists in traveling around the world. It allows users to book hotels and travel packages with ease. Built using HTML, CSS, and Bootstrap, the platform offers key features such as booking travel packages and accessing experienced guides. During development, handling various team dynamics and project challenges was crucial. The result is an intuitive and accessible tool that enhances the travel experience for users."
     },
     {
       "id": "3",
       "title": "Travel With Us",
       "img": "./images/travel_with_us.png",
-      "description": "/\"Travel with Us\" is an engaging travel website designed to offer a seamless user experience for booking travel services. The platform utilizes HTML, CSS, JavaScript, Bootstrap, and Tailwind CSS to provide a modern and responsive design. Key features include user-friendly booking options and an interactive interface for exploring travel destinations. The project emphasizes ease of navigation and aesthetic appeal, aiming to enhance the overall travel planning experience for users."
+      "description": "\"Travel with Us\" is an engaging travel website designed to offer a seamless user experience for booking travel services. The platform utilizes HTML, CSS, JavaScript, Bootstrap, and Tailwind CSS to provide a modern and responsive design. Key features include user-friendly booking options and an interactive interface for exploring travel destinations. The project emphasizes ease of navigation and aesthetic appeal, aiming to enhance the overall travel planning experience for users."
     },
     {
       "id": "4",
       "title": "Aidex",
       "img": "./images/aidex.png",
-      "description": "Aidex is a sophisticated travel website built to streamline travel planning and bookings. Developed with HTML, CSS, React, and Chakra UI, Aidex features a modern, responsive design and an intuitive user interface. Key functionalities include easy navigation through travel options and a smooth booking process. The use of Chakra UI ensures a consistent and accessible user experience, making travel planning both efficient and enjoyable for users."
+      "description": " \"Aidex\" is a sophisticated travel website built to streamline travel planning and bookings. Developed with HTML, CSS, React, and Chakra UI, Aidex features a modern, responsive design and an intuitive user interface. Key functionalities include easy navigation through travel options and a smooth booking process. The use of Chakra UI ensures a consistent and accessible user experience, making travel planning both efficient and enjoyable for users."
     },
     {
       "id": "5",
       "title": "Thirsty Wine",
       "img": "./images/wines.png",
-      "description": "Thirsty Wine is an e-commerce website designed to provide an exceptional online shopping experience for wine enthusiasts. Utilizing HTML, CSS, React, Redux, Redux-Thunk, and Chakra UI, the platform offers a modern, responsive design with a focus on user experience. Key features include a comprehensive catalog of wines, advanced search capabilities, and a secure checkout process. Redux and Redux-Thunk are used to manage and streamline state handling and asynchronous operations, while Chakra UI ensures a visually appealing and accessible interface."
+      "description": " \"Thirsty Wine\" is an e-commerce website tailored for wine enthusiasts. Built with HTML, CSS, React, Redux, Redux-Thunk, and Chakra UI, it offers a modern, responsive design. Key features include a comprehensive wine catalog, advanced search, and a secure checkout process. Redux and Redux-Thunk manage state and asynchronous operations, while Chakra UI provides a visually appealing and accessible interface."
     },
     {
       "id": "6",
-      "title": "Pantaloons Clone",
+      "title": "Pantaloons Clone - Solo Project",
       "img": "./images/pantaloons.png",
-      "description": "Pantaloons is an e-commerce platform designed to offer a seamless online shopping experience. Developed using HTML, CSS, React, Redux, Redux-Thunk, React Router DOM, and Axios, the platform features a modern and responsive design. Key functionalities include browsing and purchasing products, secure transactions, and efficient state management. Redux and Redux-Thunk handle complex state interactions and asynchronous operations, while React Router DOM ensures smooth navigation between pages. Axios is used for reliable data fetching, enhancing the overall user experience on the site."
+      "description": "\"Pantaloons\" is an e-commerce platform offering a seamless shopping experience. Built with HTML, CSS, React, Redux, Redux-Thunk, React Router DOM, and Axios, it features a modern and responsive design. Key functionalities include product browsing, secure transactions, efficient state management with Redux and Redux-Thunk, smooth navigation with React Router DOM, and reliable data fetching with Axios."
     },
     {
       "id": "7",
       "title": "Weather App",
       "img": "./images/weather.png",
-      "description": "The Weather App is a dynamic platform designed to provide real-time weather information. Built with HTML, CSS, JavaScript, React, Redux, Redux Toolkit, and React Router DOM, the app features a user-friendly interface for checking weather conditions. Redux and Redux Toolkit manage the state efficiently, while React Router DOM facilitates smooth navigation between different views. The application offers current weather data, forecasts, and other relevant information, making it a valuable tool for users looking to stay informed about weather conditions."
+      "description": "\"The Weather App\" delivers real-time weather information with a user-friendly interface. Built using HTML, CSS, JavaScript, React, Redux, Redux Toolkit, and React Router DOM, it provides current weather data, forecasts, and more. Redux and Redux Toolkit manage state efficiently, while React Router DOM ensures smooth navigation between views."
+    }
+  ],
+  "feedbacks": [
+    {
+      "id": "83ff",
+      "name": "sfdfsa",
+      "email": "DSADSAds",
+      "message": "adsaDSASADCS"
+    },
+    {
+      "id": "196a",
+      "name": "sdfsgfdsg",
+      "email": "sfdsafgdsg",
+      "message": "dsfgsdfgdsdf"
+    },
+    {
+      "id": "3084",
+      "name": "fdsafdsa",
+      "email": "fdsafdsafdsa",
+      "message": "fdsafdsafdsaf"
     }
   ]
 }

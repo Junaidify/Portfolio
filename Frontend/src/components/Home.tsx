@@ -3,43 +3,10 @@ import { Button, Text } from "@chakra-ui/react";
 import "../styles/style.css";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+import { Link } from "react-router-dom";
 const Home = () => {
   return (
-    <div style={{ width: "80%", margin: "0 auto" }}>
-      <nav id="navbar">
-        <h1>
-          <span className="logo">J</span> {"  "}
-          Junaid<span className="name_logo">ify</span>
-        </h1>
-
-        <div>
-          <Text fontSize={"2xl"} fontWeight={"bold"} color={"red"}>
-            {" "}
-            Home
-          </Text>
-          <Text fontSize={"2xl"} fontWeight={"bold"}>
-            {" "}
-            Portfolio
-          </Text>
-          <Text fontSize={"2xl"} fontWeight={"bold"}>
-            {" "}
-            About
-          </Text>
-          <Text fontSize={"2xl"} fontWeight={"bold"}>
-            {" "}
-            Contact
-          </Text>
-          <Text fontSize={"2xl"} fontWeight={"bold"}>
-            {" "}
-            Blog
-          </Text>
-        </div>
-        <Button fontSize={"2xl"}>theme</Button>
-        <Button fontSize={"2xl"} className="hire_me">
-          Hire me
-        </Button>
-      </nav>
+    <div style={{ width: "80%", height: "100vh", margin: "0 auto" }}>
       <main id="main">
         <div>
           <Text color={"white"} mt={"15vh"} ml={"2vw"} className="heading">
