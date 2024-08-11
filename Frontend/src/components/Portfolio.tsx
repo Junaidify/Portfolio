@@ -8,7 +8,7 @@ import {
   ReactNode,
   ReactPortal,
 } from "react";
-import project_img from "../redux/pantaloons.png";
+// import project_img from "../redux/pantaloons.png";
 
 export const Portfolio = () => {
   const { isLoading, isError, data } = useSelector((state: any) => state.fetch);
@@ -68,7 +68,7 @@ export const Portfolio = () => {
                 borderRadius={"10px"}
               >
                 <Box w={"100%"} h={"50%"}>
-                  <Image w={"100%"} h={"100%"} src={project_img} />
+                  <Image w={"100%"} h={"100%"} src={item.img} />
                 </Box>
                 <Box
                   display={"flex"}
