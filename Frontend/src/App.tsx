@@ -22,13 +22,20 @@ function App() {
       >
         <div id="navbar_wrapper">
           <nav id="navbar">
-            <Text fontSize={"2xl"} fontWeight={"bold"} fontStyle={"italic"} color={"white"}>
-              <span  className="logo">J</span> {"   "}
-              Junaid<span className="name_logo">ify</span>
+            <Text
+              fontSize={"2xl"}
+              fontWeight={"bold"}
+              fontStyle={"italic"}
+              color={"white"}
+            >
+              <NavLink to="/">
+                <span className="logo">J</span> {"   "}
+                Junaid<span className="name_logo">ify</span>
+              </NavLink>
             </Text>
 
             <div>
-              <Text  fontWeight={"bold"} color={"red"}>
+              <Text fontWeight={"bold"} color={"red"}>
                 <NavLink
                   to="/"
                   style={({ isActive }) => {
@@ -38,7 +45,7 @@ function App() {
                   Home
                 </NavLink>
               </Text>
-              <Text  fontWeight={"bold"}>
+              <Text fontWeight={"bold"}>
                 <NavLink
                   to="/portfolio"
                   style={({ isActive }) => {
@@ -48,7 +55,7 @@ function App() {
                   Portfolio
                 </NavLink>
               </Text>
-              <Text  fontWeight={"bold"}>
+              <Text fontWeight={"bold"}>
                 <NavLink
                   to="/skills"
                   style={({ isActive }) => {
@@ -58,7 +65,7 @@ function App() {
                   Skills
                 </NavLink>
               </Text>
-              <Text  fontWeight={"bold"}>
+              <Text fontWeight={"bold"}>
                 <NavLink
                   to="/resume/connect"
                   style={({ isActive }) => {
@@ -68,7 +75,7 @@ function App() {
                   Resume/Connect
                 </NavLink>
               </Text>
-              <Text  fontWeight={"bold"}>
+              <Text fontWeight={"bold"}>
                 <NavLink
                   to="/feedback"
                   style={({ isActive }) => {
@@ -81,7 +88,7 @@ function App() {
             </div>
 
             <Button className="hire_me">
-            <FontAwesomeIcon icon={faAffiliatetheme} />
+              <FontAwesomeIcon icon={faAffiliatetheme} />
             </Button>
           </nav>
         </div>

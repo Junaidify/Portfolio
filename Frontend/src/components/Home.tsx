@@ -3,7 +3,6 @@ import { Button, Text } from "@chakra-ui/react";
 import "../styles/style.css";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link } from "react-router-dom";
 const Home = () => {
   return (
     <div style={{ width: "80%", height: "100vh", margin: "0 auto" }}>

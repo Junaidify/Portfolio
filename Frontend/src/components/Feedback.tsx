@@ -41,7 +41,7 @@ export const Feedback = () => {
     }
 
     axios
-      .post("http://localhost:3000/feedbacks", formData)
+      .post("https://portfolio-fc8l.onrender.com/feedbacks", formData)
       .then((response) => {
         console.log(response);
       })
