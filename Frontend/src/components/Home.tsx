@@ -1,4 +1,4 @@
-import React, { forwardRef } from "react";
+import  { forwardRef } from "react";
 import { Button, Text, Image } from "@chakra-ui/react";
 import "../styles/style.css";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
