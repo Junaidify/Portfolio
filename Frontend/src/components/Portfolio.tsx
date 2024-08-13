@@ -24,11 +24,12 @@ export const Portfolio = ({ textColor }: { textColor: string }) => {
       style={{
         width: "80%",
         height: "100%",
-        margin: "0 auto",
+        margin: "13vh auto",
         color: textColor,
+        paddingTop: "5vh",
       }}
     >
-      <Text fontSize={"3rem"} pt={"5vh"} fontWeight={"bold"}>
+      <Text fontSize={"3rem"} pt={"5vh"} fontWeight={"bold"} textAlign={"center"} >
         Projects
       </Text>
       <Grid

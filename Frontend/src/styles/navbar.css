@@ -8,13 +8,10 @@
 #resume {
   width: 80%;
   margin: 0 auto;
-  height: 100vh;
+  height: fit-content;
+  padding-top: 3vh;
 
 }
-
-/* .skills_box {
-  outline: 0.5px solid white;
-} */
 
 .copy:active {
   color: white;
@@ -23,8 +20,9 @@
 #feedback_wrapper {
   width: 80%;
   margin: 0 auto;
-  height: 100vh;
+  height: 90vh;
   position: relative;
+  margin-top: 25vh;
 }
 
 #feedback_wrapper > div {

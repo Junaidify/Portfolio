@@ -21,6 +21,7 @@
   margin: 0 auto;
   padding: 2vh 1vw;
   background-color: black;
+  ;
 }
 
 #navbar div {
@@ -103,10 +104,10 @@
 
 #profile_img{
   position: absolute;
-  top: 1.8vh;
-  right: 10vh;
-  width: 60%;
-  height: 80%;
+  top: 10vh;
+  right: 25vh;
+  width: 30%;
+  height: 11.45%;
   border-top-left-radius: 50%;
   border-top-right-radius: 50%
 }

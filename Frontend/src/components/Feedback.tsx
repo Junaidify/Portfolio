@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { forwardRef, useCallback, useState } from "react";
 import {
   Button,
   Grid,
@@ -10,7 +10,7 @@ import {
 import axios from "axios";
 import { FeedbackPropType } from "../redux/initialState";
 
-export const Feedback = ({ textColor }: { textColor: string }) => {
+export const Feedback = forwardRef(({ textColor }: { textColor: string }, ref : any) => {
   const [formData, setFormData] = useState<FeedbackPropType>({
     name: "",
     email: "",
@@ -57,8 +57,9 @@ export const Feedback = ({ textColor }: { textColor: string }) => {
   }, [formData]);
 
   return (
-    <div id="feedback_wrapper">
+    <div ref={ref} id="feedback_wrapper">
       <div>
+        <Text fontSize={"3rem"} color={textColor} fontWeight={"bold"} textAlign={"center"} >Feedback Form</Text>
         <Grid className="feedback" color={"red"} m={"0 auto"} rowGap={"2vh"}>
           <GridItem>
             <Text fontSize={"xl"} color={textColor} fontWeight={"bold"}>
@@ -123,4 +124,4 @@ export const Feedback = ({ textColor }: { textColor: string }) => {
       </div>
     </div>
   );
-};
+});

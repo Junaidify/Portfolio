@@ -11,6 +11,7 @@ export const Skills = ({ textColor }: { textColor: string }) => {
         color={textColor}
         m={"5vh 1vw 0 0"}
         fontWeight={"bold"}
+        textAlign={"center"}
       >
         Skills
       </Text>

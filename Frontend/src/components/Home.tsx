@@ -1,13 +1,13 @@
-import {} from "react";
+import React, { forwardRef } from "react";
 import { Button, Text, Image } from "@chakra-ui/react";
 import "../styles/style.css";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import profile_img from "../images/profile_img3.png";
 
-export const Home = ({ textColor }: { textColor: string }) => {
+const Home = forwardRef(({ textColor }: { textColor: string }, ref : any) => {
   return (
-    <div style={{ width: "80%", height: "100vh", margin: "0 auto" }}>
+    <div ref={ref} style={{ width: "80%", height: "fit-content", margin: "0 auto", padding: "5vh 0" }}>
       <main id="main">
         <div>
           <Text
@@ -19,7 +19,6 @@ export const Home = ({ textColor }: { textColor: string }) => {
           >
             WELCOME TO MY WORLD
           </Text>
-
           <Text
             color={textColor}
             ml={"2vw"}
@@ -48,7 +47,6 @@ export const Home = ({ textColor }: { textColor: string }) => {
             focus on modern web technologies, I deliver efficient and innovative
             web solutions.
           </Text>
-
           <Button
             mt={"8vh"}
             ml={"2vw"}
@@ -65,10 +63,12 @@ export const Home = ({ textColor }: { textColor: string }) => {
         <div id="main_div">
           <div></div>
           <p id="profile_img">
-            <Image id="profile_img" w={"100%"} h={"100%"} src={profile_img} />
+            <Image w={"100%"} h={"100%"} src={profile_img} />
           </p>
         </div>
-      </main>
+      </main>      
     </div>
   );
-};
+});
+
+export { Home };
