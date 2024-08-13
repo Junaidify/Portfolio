@@ -39,7 +39,7 @@
     {
       "id": "6",
       "title": "Weather App",
-      "link" : "",
+      "link" : "https://open-weather-weld.vercel.app/",
       "img": "https://res.cloudinary.com/dn7js4wyp/image/upload/v1723553962/Screenshot_2024-08-13_182727_jp6hxc.png",
       "description": " \"The Weather App\" offers real-time weather information through a user-friendly interface. Built with HTML, CSS, JavaScript, React, Redux, Redux Toolkit, and React Router DOM, it provides current weather data and forecasts. Redux and Redux Toolkit handle state management efficiently, while React Router DOM ensures smooth navigation."
     }
