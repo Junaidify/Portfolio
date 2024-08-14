@@ -107,7 +107,7 @@ export const Resume = forwardRef(
               borderRadius={"10px"}
               fontWeight={textColor === "black" ? "bold" : "normal"}
               onClick={() =>
-                window.open("https://www.linkedin.com/in/junaidkhan23785/")
+                window.open("https://www.linkedin.com/feed/")
               }
             >
               LinkedIn{" "}
