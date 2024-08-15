@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import { Box, Grid, GridItem, Image, Text } from "@chakra-ui/react";
 import { useFetch } from "../hooks/useFetch";
+import { Loading } from "./Loading";
 import {
   Key,
   ReactElement,
@@ -8,35 +9,46 @@ import {
   ReactNode,
   ReactPortal,
 } from "react";
-// import project_img from "../redux/pantaloons.png";
 
-export const Portfolio = ({ textColor }: { textColor: string }) => {
-  const { isLoading, isError, data } = useSelector((state: any) => state.fetch);
+export const Projects = ({ textColor }: { textColor: string }) => {
   useFetch();
+  const { isLoading, isError, data } = useSelector((state: any) => state.fetch);
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <Loading />;
   if (isError) return <div>Error</div>;
 
   console.log(data);
 
   return (
     <div
+      className="projects_container"
       style={{
         width: "80%",
         height: "100%",
-        margin: "13vh auto",
+        margin: "5vh auto 0",
         color: textColor,
         paddingTop: "5vh",
       }}
     >
-      <Text fontSize={"3rem"} pt={"5vh"} fontWeight={"bold"} textAlign={"center"} >
+      <Text
+        fontSize={{ base: "2rem", md: "2.5rem", lg: "3rem" }}
+        pt={"5vh"}
+        fontWeight={"bold"}
+        textAlign={"center"}
+      >
         Projects
       </Text>
       <Grid
-        templateColumns="repeat(3, 1fr)"
+        templateColumns={{
+          base: "repeat(1, 1fr)",
+          md: "repeat(2, 1fr)",
+          lg: "repeat(3, 1fr)",
+        }}
         mt={"5vh"}
+        mx={"auto"}
         columnGap={"5vw"}
         rowGap={"5vh"}
+        _loading={{ opacity: 0.1 }}
       >
         {data &&
           data.map(
@@ -69,9 +81,11 @@ export const Portfolio = ({ textColor }: { textColor: string }) => {
                 border={`1px solid ${
                   textColor === "black" ? "black" : "white"
                 }`}
-                height={"65vh"}
+                height={"60vh"}
                 w={"100%"}
                 borderRadius={"10px"}
+                cursor={"pointer"}
+                overflow={"hidden"}
               >
                 <Box w={"100%"} h={"50%"}>
                   <Image w={"100%"} h={"100%"} src={item.img} />

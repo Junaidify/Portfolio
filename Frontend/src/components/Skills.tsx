@@ -1,5 +1,4 @@
 import { Grid, GridItem, Text } from "@chakra-ui/react";
-import {} from "react";
 import "../styles/navbar.css";
 import { StarIcons } from "./StarIcons";
 
@@ -16,7 +15,7 @@ export const Skills = ({ textColor }: { textColor: string }) => {
         Skills
       </Text>
       <Grid
-        templateColumns="repeat(2, 1fr)"
+        templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(1, 1fr)", lg: "repeat(2, 1fr)" }}
         color={textColor}
         rowGap={"5vh"}
         columnGap={"5vw"}

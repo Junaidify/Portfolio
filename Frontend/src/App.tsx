@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import "./App.css";
 import "./styles/style.css";
 import { Home } from "./components/Home";
-import { Portfolio } from "./components/Portfolio";
+import { Projects } from "./components/Projects";
 import { Button, Text } from "@chakra-ui/react";
 import { Skills } from "./components/Skills";
 import { Resume } from "./components/Resume";
@@ -29,7 +29,10 @@ function App() {
     }
   };
 
-  const handleNavClick = (section: string, ref: React.RefObject<HTMLDivElement>) => {
+  const handleNavClick = (
+    section: string,
+    ref: React.RefObject<HTMLDivElement>
+  ) => {
     scrollToRef(ref);
     setActiveSection(section);
   };
@@ -46,13 +49,19 @@ function App() {
       >
         <nav
           id="navbar"
-          style={{ backgroundColor: currentColor ? "white" : "black", position: "fixed", left: "10vw", top: "0", }}
+          style={{
+            backgroundColor: currentColor ? "white" : "black",
+            position: "sticky",
+            left: "10vw",
+            top: "0",
+          }}
         >
           <Text
-            fontSize={"2xl"}
+            fontSize={{ base: "1.5rem", md: "2rem" }}
             fontWeight={"bold"}
             fontStyle={"italic"}
             color={"white"}
+            className="logo_box"
           >
             <span className="logo">J</span>
             <span style={{ color: currentColor ? "black" : "white" }}>
@@ -66,7 +75,15 @@ function App() {
               <Button
                 variant="link"
                 onClick={() => handleNavClick("home", homeRef)}
-                color={currentColor ? (activeSection === "home" ? "red" : 'black') : (activeSection === "home" ? 'red' : 'white')}
+                color={
+                  currentColor
+                    ? activeSection === "home"
+                      ? "red"
+                      : "black"
+                    : activeSection === "home"
+                    ? "red"
+                    : "white"
+                }
               >
                 Home
               </Button>
@@ -75,7 +92,15 @@ function App() {
               <Button
                 variant="link"
                 onClick={() => handleNavClick("portfolio", portfolioRef)}
-                color={currentColor ? (activeSection === "portfolio" ? "red" : 'black') : (activeSection === "portfolio" ? 'red' : 'white')}
+                color={
+                  currentColor
+                    ? activeSection === "portfolio"
+                      ? "red"
+                      : "black"
+                    : activeSection === "portfolio"
+                    ? "red"
+                    : "white"
+                }
               >
                 Projects
               </Button>
@@ -84,7 +109,15 @@ function App() {
               <Button
                 variant="link"
                 onClick={() => handleNavClick("skills", skillsRef)}
-                color={currentColor ? (activeSection === "skills" ? "red" : 'black') : (activeSection === "skills" ? 'red' : 'white')}
+                color={
+                  currentColor
+                    ? activeSection === "skills"
+                      ? "red"
+                      : "black"
+                    : activeSection === "skills"
+                    ? "red"
+                    : "white"
+                }
               >
                 Skills
               </Button>
@@ -93,7 +126,15 @@ function App() {
               <Button
                 variant="link"
                 onClick={() => handleNavClick("resume", resumeRef)}
-                color={currentColor ? (activeSection === "resume" ? "red" : 'black') : (activeSection === "resume" ? 'red' : 'white')}
+                color={
+                  currentColor
+                    ? activeSection === "resume"
+                      ? "red"
+                      : "black"
+                    : activeSection === "resume"
+                    ? "red"
+                    : "white"
+                }
               >
                 Resume/Connect
               </Button>
@@ -102,14 +143,22 @@ function App() {
               <Button
                 variant="link"
                 onClick={() => handleNavClick("feedback", feedbackRef)}
-                color={currentColor ? (activeSection === "feedback" ? "red" : 'black') : (activeSection === "feedback" ? 'red' : 'white')}
+                color={
+                  currentColor
+                    ? activeSection === "feedback"
+                      ? "red"
+                      : "black"
+                    : activeSection === "feedback"
+                    ? "red"
+                    : "white"
+                }
               >
                 Feedback
               </Button>
             </Text>
           </div>
           <Button
-            className="hire_me"
+            className="theme"
             color={currentColor ? "white" : "black"}
             bg={currentColor ? "black" : "white"}
             onClick={() => setCurrentColor((prev) => !prev)}
@@ -122,7 +171,7 @@ function App() {
           <Home textColor={currentColor ? "black" : "white"} />
         </div>
         <div ref={portfolioRef} id="portfolio">
-          <Portfolio textColor={currentColor ? "black" : "white"} />
+          <Projects textColor={currentColor ? "black" : "white"} />
         </div>
         <div ref={skillsRef} id="skills">
           <Skills textColor={currentColor ? "black" : "white"} />

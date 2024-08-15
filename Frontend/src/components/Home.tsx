@@ -1,15 +1,22 @@
-import  { forwardRef } from "react";
+import { forwardRef } from "react";
 import { Button, Text, Image } from "@chakra-ui/react";
 import "../styles/style.css";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import profile_img from "../images/profile_img3.png";
+import profile_img from "../images/profile-pic.png";
 
-const Home = forwardRef(({ textColor }: { textColor: string }, ref : any) => {
+const Home = forwardRef(({ textColor }: { textColor: string }, ref: any) => {
   return (
-    <div ref={ref} style={{ width: "80%", height: "fit-content", margin: "0 auto", padding: "5vh 0" }}>
+    <div
+      ref={ref}
+      style={{
+        width: "80%",
+        height: "100%",
+        margin: "0 auto",
+      }}
+    >
       <main id="main">
-        <div>
+        <div className="home_intro_wrapper">
           <Text
             color={textColor}
             mt={"15vh"}
@@ -34,7 +41,7 @@ const Home = forwardRef(({ textColor }: { textColor: string }, ref : any) => {
           </Text>
           <Text
             color={textColor}
-            w={"80%"}
+            className="home_bio"
             ml={"2vw"}
             mt={"9vh"}
             lineHeight={"2.7vh"}
@@ -60,13 +67,12 @@ const Home = forwardRef(({ textColor }: { textColor: string }, ref : any) => {
             </span>
           </Button>
         </div>
-        <div id="main_div">
-          <div></div>
+        <div className="main_img_wrapper">
           <p id="profile_img">
-            <Image w={"100%"} h={"100%"} src={profile_img} />
+            <Image  w={"100%"} h={"100%"} src={profile_img} />
           </p>
         </div>
-      </main>      
+      </main>
     </div>
   );
 });

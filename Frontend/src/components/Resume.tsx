@@ -3,15 +3,16 @@ import { Grid, Box, Text, Button } from "@chakra-ui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCopy, faDownload } from "@fortawesome/free-solid-svg-icons";
 import "../styles/navbar.css";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 export const Resume = forwardRef(
   ({ textColor }: { textColor: string }, ref: any) => {
     return (
       <div ref={ref} id="resume">
         <Text
-          fontSize={"3rem"}
+          fontSize={{ base: "2rem", md: "3rem" }}
           color={textColor}
-          m={"5vh 1vw 0 0"}
+          m={"3vh 1vw 2vh"}
           fontWeight={"bold"}
           textAlign={"center"}
         >
@@ -20,7 +21,7 @@ export const Resume = forwardRef(
         <Grid>
           <Box>
             <Text
-              fontSize={"1.5rem"}
+              fontSize={{ base: "1.5rem", md: "2rem" }}
               color={textColor}
               m={"1vh 1vw"}
               fontWeight={"bold"}
@@ -33,11 +34,11 @@ export const Resume = forwardRef(
             color={textColor}
             fontWeight={"bold"}
             display={"flex"}
-            alignItems={"center"}
+            alignSelf={"center"}
             ml={"1vw"}
           >
-            <Text fontSize={"1.5rem"}>Email: </Text>
-            <Text fontSize={"1.3rem"} m={"1vh 1vw"}>
+            <Text fontSize={{ base: "1.3rem", md: "1.5rem" }}>Email: </Text>
+            <Text fontSize={{ base: "1.1rem", md: "1.3rem" }} m={"1vh 1vw"}>
               junaidkhan23785@gmail.com
               <Button
                 className="copy"
@@ -62,7 +63,7 @@ export const Resume = forwardRef(
             alignContent={"center"}
             ml={"1vw"}
           >
-            <Text fontSize={"1.5rem"}>Phone : </Text>
+            <Text fontSize={{ base: "1.2rem", md: "1.5rem" }}>Phone : </Text>
             <Text fontSize={"1.3rem"} m={"0 1vw"}>
               9582870760
               <Button
@@ -85,49 +86,57 @@ export const Resume = forwardRef(
             display={"flex"}
             alignItems={"center"}
           >
-            <Text fontSize={"1.5rem"} m={"1vh 1vw"}>
+            <Text fontSize={{ base: "1.2rem", md: "1.5rem" }} m={"1vh 1vw"}>
               Location:
             </Text>
-            <Text fontSize={"1.2rem"}>New Delhi, India</Text>
+            <Text fontSize={{ base: "1.2rem", md: "1.5rem" }}>
+              New Delhi, India
+            </Text>
           </Box>
 
           <Box
             color={textColor}
-            display={"flex"}
-            alignItems={"center"}
+            display={"grid"}
+            gridTemplateColumns={{
+              base: "repeat(1, 1fr)",
+              md: "repeat(2, 1fr)",
+              lg: "repeat(3, 1fr)",
+            }}
             columnGap={"2vw"}
-            ml={"1vw"}
+            rowGap={"1vh"}
+            textAlign={"center"}
             mt={"6vh"}
           >
             <Text
               border={"1px solid white"}
               p={"1vh 1.2vw"}
               bg={"red"}
-              fontSize={"1.2rem"}
+              color={textColor === "black" ? "black" : "white"}
+              fontSize={{ base: "1.1rem", md: "1.5rem" }}
               borderRadius={"10px"}
               fontWeight={textColor === "black" ? "bold" : "normal"}
-              onClick={() =>
-                window.open("https://www.linkedin.com/feed/")
-              }
+              onClick={() => window.open("https://www.linkedin.com/feed/")}
             >
-              LinkedIn{" "}
+              LinkedIn{" "} <FontAwesomeIcon icon={faLinkedin} />
             </Text>
             <Text
               border={"1px solid white"}
               p={"1vh 1.2vw"}
               bg={"red"}
-              fontSize={"1.2rem"}
+              color={textColor === "black" ? "black" : "white"}
+              fontSize={{ base: "1.1rem", md: "1.3rem" }}
               borderRadius={"10px"}
               fontWeight={textColor === "black" ? "bold" : "normal"}
               onClick={() => window.open("https://github.com/junaidify")}
             >
-              GitHub
+              GitHub{" "}<FontAwesomeIcon icon={faGithub} />
             </Text>
             <Text
               border={"1px solid white"}
-              p={"1vh 1.2vw"}
+              p={{ base: "1vh 1.2vw", md: "1vh 1.5vw" }}
               bg={"red"}
-              fontSize={"1.2rem"}
+              color={textColor === "black" ? "black" : "white"}
+              fontSize={{ base: "1.1rem", md: "1.3rem" }}
               borderRadius={"10px"}
               fontWeight={textColor === "black" ? "bold" : "normal"}
             >
