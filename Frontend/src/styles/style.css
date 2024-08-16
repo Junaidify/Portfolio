@@ -144,33 +144,7 @@
 #main .home_intro_wrapper .bio {
   font-size: 1.5rem;
   color: rgb(145, 128, 128);
-  animation: blink 2s 5s forwards linear;
-  position: absolute;
   font-size: 1.5rem;
-  top: 28vh;
-  left: 2.2rem;
-  transition: all 2s;
-}
-
-@keyframes blink {
-  0% {
-    top: 28vh;
-    left: 3vw;
-    font-size: 2rem;
-    opacity: 0;
-  }
-  50% {
-    top: 7vh;
-    left: 2.5vw;
-    font-size: 1.7rem;
-    opacity: 0.5;
-  }
-  100% {
-    top: 28vh;
-    left: 2.2vw;
-    font-size: 1.5rem;
-    opacity: 1;
-  }
 }
 
 .main_img_wrapper {
@@ -223,27 +197,7 @@
   .home_intro_wrapper {
     margin-top: -10vh;
   }
-
-  @keyframes blink {
-    0% {
-      top: 45vh;
-      left: 3vw;
-      font-size: 2rem;
-      opacity: 0;
-    }
-    50% {
-      top: 27vh;
-      left: 2.5vw;
-      font-size: 1.7rem;
-      opacity: 0.5;
-    }
-    100% {
-      top: 45vh;
-      left: 2.2vw;
-      font-size: 1.2rem;
-      opacity: 1;
-    }
-  }
+  
 }
 
 @media screen and (min-width: 431px) and (max-width: 768px) {
@@ -269,27 +223,6 @@
 
   .home_intro_wrapper {
     margin-top: -10vh;
-  }
-
-  @keyframes blink {
-    0% {
-      top: 25vh;
-      left: 3vw;
-      font-size: 2rem;
-      opacity: 0;
-    }
-    50% {
-      top: 7vh;
-      left: 2.5vw;
-      font-size: 1.7rem;
-      opacity: 0.5;
-    }
-    100% {
-      top: 25vh;
-      left: 2.2vw;
-      font-size: 1.2rem;
-      opacity: 1;
-    }
   }
 }
 
@@ -321,27 +254,6 @@
   .home_bio {
     top: 20vh;
   }
-
-  @keyframes blink {
-    0% {
-      top: 30vh;
-      left: 3vw;
-      font-size: 2rem;
-      opacity: 0;
-    }
-    50% {
-      top: 17vh;
-      left: 2.5vw;
-      font-size: 1.7rem;
-      opacity: 0.5;
-    }
-    100% {
-      top: 30vh;
-      left: 2.2vw;
-      font-size: 1.2rem;
-      opacity: 1;
-    }
-  }
 }
 
 @media screen and (min-width: 1025px) {
@@ -367,28 +279,5 @@
     margin-top: 5vh;
   }
 
-  .bio {
-    top: 25vh;
-  }
 
-  @keyframes blink {
-    0% {
-      top: 25vh;
-      left: 3vw;
-      font-size: 2rem;
-      opacity: 0;
-    }
-    50% {
-      top: 7vh;
-      left: 2.5vw;
-      font-size: 1.7rem;
-      opacity: 0.5;
-    }
-    100% {
-      top: 25vh;
-      left: 2.2vw;
-      font-size: 1.2rem;
-      opacity: 1;
-    }
-  }
 }

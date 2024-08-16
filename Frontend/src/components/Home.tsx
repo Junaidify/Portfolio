@@ -35,7 +35,7 @@ const Home = forwardRef(({ textColor }: { textColor: string }, ref: any) => {
             <span style={{ color: "red" }}>HI,</span>{" "}
             <span style={{ fontSize: "3rem" }}>I'M JUNAID KHAN</span>
           </Text>
-          <Text color={textColor} className="bio">
+          <Text color={textColor} className="bio" fontSize={{ base: "1.1rem", md: "1.3rem"}} mt={"1vh"} ml={"2vw"} >
             {" "}
             A FRONTEND WEB DEVELOPER
           </Text>
@@ -43,7 +43,7 @@ const Home = forwardRef(({ textColor }: { textColor: string }, ref: any) => {
             color={textColor}
             className="home_bio"
             ml={"2vw"}
-            mt={"9vh"}
+            mt={"3vh"}
             lineHeight={"2.7vh"}
             fontSize={"1.1rem"}
           >
