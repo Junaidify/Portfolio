@@ -116,7 +116,7 @@ export const Resume = forwardRef(
               fontSize={{ base: "1.1rem", md: "1.5rem" }}
               borderRadius={"10px"}
               fontWeight={textColor === "black" ? "bold" : "normal"}
-              onClick={() => window.open("https://www.linkedin.com/feed/")}
+              onClick={() => window.open("https://www.linkedin.com/in/junaidify-khan/")}
             >
               LinkedIn <FontAwesomeIcon icon={faLinkedin} />
             </Text>

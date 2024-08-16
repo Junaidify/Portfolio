@@ -34,7 +34,7 @@ export const Skills = ({ textColor }: { textColor: string }) => {
             w={"40%"}
             fontWeight={textColor === "black" ? "bold" : "normal"}
           >
-            HTML
+            HTML 
           </Text>
           <StarIcons rating={4} />
         </GridItem>

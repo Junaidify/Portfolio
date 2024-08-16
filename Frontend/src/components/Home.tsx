@@ -1,9 +1,10 @@
 import { forwardRef } from "react";
 import { Button, Text, Image } from "@chakra-ui/react";
 import "../styles/style.css";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { faArrowRight, faDownload } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import profile_img from "../images/profile-pic.png";
+import resume from "../../public/resume.pdf";
 
 const Home = forwardRef(({ textColor }: { textColor: string }, ref: any) => {
   return (
@@ -35,7 +36,13 @@ const Home = forwardRef(({ textColor }: { textColor: string }, ref: any) => {
             <span style={{ color: "red" }}>HI,</span>{" "}
             <span style={{ fontSize: "3rem" }}>I'M JUNAID KHAN</span>
           </Text>
-          <Text color={textColor} className="bio" fontSize={{ base: "1.1rem", md: "1.3rem"}} mt={"1vh"} ml={"2vw"} >
+          <Text
+            color={textColor}
+            className="bio"
+            fontSize={{ base: "1.1rem", md: "1.3rem" }}
+            mt={"1vh"}
+            ml={"2vw"}
+          >
             {" "}
             A FRONTEND WEB DEVELOPER
           </Text>
@@ -61,15 +68,14 @@ const Home = forwardRef(({ textColor }: { textColor: string }, ref: any) => {
             color={textColor}
             className="hire_me"
           >
-            Portfolio{" "}
-            <span style={{ marginLeft: "0.3vw", transform: "rotate(-40deg)" }}>
-              <FontAwesomeIcon icon={faArrowRight} />
-            </span>
+            <a href={resume} download="resume.pdf">
+              Resume <FontAwesomeIcon icon={faDownload} />
+            </a>
           </Button>
         </div>
         <div className="main_img_wrapper">
           <p id="profile_img">
-            <Image  w={"100%"} h={"100%"} src={profile_img} />
+            <Image w={"100%"} h={"100%"} src={profile_img} />
           </p>
         </div>
       </main>
