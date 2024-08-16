@@ -31,13 +31,6 @@
     },
     {
       "id": "5",
-      "title": "Pantaloons Clone - Solo Project",
-      "link": "https://pantaloons-clone-ashen.vercel.app/",
-      "img": "https://res.cloudinary.com/dn7js4wyp/image/upload/v1723401644/yemmobjvxrpebrj571d9.png",
-      "description": "\"Pantaloons\" is an e-commerce platform providing a seamless shopping experience. Built with HTML, CSS, React, Redux, Redux-Thunk, React Router DOM, and Axios, it offers a modern, responsive design. Key features include product browsing, secure transactions, efficient state management, smooth navigation, and reliable data fetching."
-    },
-    {
-      "id": "6",
       "title": "Weather App",
       "link" : "https://open-weather-weld.vercel.app/",
       "img": "https://res.cloudinary.com/dn7js4wyp/image/upload/v1723553962/Screenshot_2024-08-13_182727_jp6hxc.png",
