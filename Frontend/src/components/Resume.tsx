@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCopy, faDownload } from "@fortawesome/free-solid-svg-icons";
 import "../styles/navbar.css";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import resume from "../../public/resume.pdf";
 
 export const Resume = forwardRef(
   ({ textColor }: { textColor: string }, ref: any) => {
@@ -117,7 +118,7 @@ export const Resume = forwardRef(
               fontWeight={textColor === "black" ? "bold" : "normal"}
               onClick={() => window.open("https://www.linkedin.com/feed/")}
             >
-              LinkedIn{" "} <FontAwesomeIcon icon={faLinkedin} />
+              LinkedIn <FontAwesomeIcon icon={faLinkedin} />
             </Text>
             <Text
               border={"1px solid white"}
@@ -129,7 +130,7 @@ export const Resume = forwardRef(
               fontWeight={textColor === "black" ? "bold" : "normal"}
               onClick={() => window.open("https://github.com/junaidify")}
             >
-              GitHub{" "}<FontAwesomeIcon icon={faGithub} />
+              GitHub <FontAwesomeIcon icon={faGithub} />
             </Text>
             <Text
               border={"1px solid white"}
@@ -140,7 +141,7 @@ export const Resume = forwardRef(
               borderRadius={"10px"}
               fontWeight={textColor === "black" ? "bold" : "normal"}
             >
-              <a href="../images/resume.pdf" download>
+              <a href={resume} download="resume.pdf">
                 Resume <FontAwesomeIcon icon={faDownload} />
               </a>
             </Text>
