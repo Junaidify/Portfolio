@@ -28,7 +28,7 @@ export const Skills = ({ textColor }: { textColor: string }) => {
           <Text
             border={`1px solid ${textColor === "black" ? "black" : "white"}`}
             textAlign={"center"}
-            p={"0.8vh 4vw"}
+            p={"0.8vh 2vw"}
             fontSize={"xl"}
             borderRadius={"20px"}
             w={"40%"}
@@ -88,7 +88,7 @@ export const Skills = ({ textColor }: { textColor: string }) => {
           <Text
             border={`1px solid ${textColor === "black" ? "black" : "white"}`}
             textAlign={"center"}
-            p={"0.8vh 4vw"}
+            p={"0.8vh 2vw"}
             fontSize={"xl"}
             borderRadius={"20px"}
             w={"40%"}
@@ -103,7 +103,7 @@ export const Skills = ({ textColor }: { textColor: string }) => {
           <Text
             border={`1px solid ${textColor === "black" ? "black" : "white"}`}
             textAlign={"center"}
-            p={"0.8vh 4vw"}
+            p={"0.8vh 2vw"}
             fontSize={"xl"}
             borderRadius={"20px"}
             w={"40%"}
@@ -118,7 +118,7 @@ export const Skills = ({ textColor }: { textColor: string }) => {
           <Text
             border={`1px solid ${textColor === "black" ? "black" : "white"}`}
             textAlign={"center"}
-            p={"0.8vh 2vw"}
+            p={"0.8vh 0vw"}
             fontSize={"xl"}
             borderRadius={"20px"}
             w={"40%"}
