@@ -1,7 +1,7 @@
 import { forwardRef } from "react";
 import { Button, Text, Image } from "@chakra-ui/react";
 import "../styles/style.css";
-import { faArrowRight, faDownload } from "@fortawesome/free-solid-svg-icons";
+import { faDownload } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import profile_img from "../images/profile-pic.png";
 import resume from "../../public/resume.pdf";
