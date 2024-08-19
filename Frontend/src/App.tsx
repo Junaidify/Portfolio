@@ -63,7 +63,7 @@ function App() {
             color={"white"}
             className="logo_box"
           >
-            <span className="logo">J</span>
+            <span className="logo">JK</span>
             <span style={{ color: currentColor ? "black" : "white" }}>
               JunaidKhan
             </span>
