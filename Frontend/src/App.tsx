@@ -65,9 +65,8 @@ function App() {
           >
             <span className="logo">J</span>
             <span style={{ color: currentColor ? "black" : "white" }}>
-              Junaid
+              JunaidKhan
             </span>
-            <span className="name_logo">ify</span>
           </Text>
 
           <div>
