@@ -9,10 +9,12 @@ import { Resume } from "./components/Resume";
 import { Feedback } from "./components/Feedback";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAffiliatetheme } from "@fortawesome/free-brands-svg-icons";
+import {useFetch} from "./hooks/useFetch";
 
 function App() {
   const [currentColor, setCurrentColor] = useState<boolean>(false);
   const [activeSection, setActiveSection] = useState<string>("home");
+    useFetch();
 
   const homeRef = useRef<HTMLDivElement>(null);
   const portfolioRef = useRef<HTMLDivElement>(null);
