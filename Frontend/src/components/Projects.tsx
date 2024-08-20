@@ -1,85 +1,93 @@
 import { useSelector } from "react-redux";
-import { Box, Grid, GridItem, Image, Text } from "@chakra-ui/react";
 import { useFetch } from "../hooks/useFetch";
-import { Loading } from "./Loading";
 import {
   Key,
   ReactElement,
   JSXElementConstructor,
   ReactNode,
   ReactPortal,
+  forwardRef,
+  useMemo,
 } from "react";
+import { Loading } from "./Loading";
+import { Text, GridItem, Box, Image, Grid } from "@chakra-ui/react";
 
-export const Projects = ({ textColor }: { textColor: string }) => {
-  useFetch();
-  const { isLoading, isError, data } = useSelector((state: any) => state.fetch);
+interface ProjectItem {
+  id: Key | null | undefined;
+  img: string | undefined;
+  link: string | undefined;
+  title:
+    | string
+    | number
+    | boolean
+    | ReactElement<any, string | JSXElementConstructor<any>>
+    | Iterable<ReactNode>
+    | ReactPortal
+    | null
+    | undefined;
+  description:
+    | string
+    | number
+    | boolean
+    | ReactElement<any, string | JSXElementConstructor<any>>
+    | Iterable<ReactNode>
+    | ReactPortal
+    | null
+    | undefined;
+}
 
-  if (isLoading) return <Loading />;
-  if (isError) return <div>Error</div>;
+interface ProjectTheme {
+  textColor: string;
+}
 
-  console.log(data);
+export const Projects = forwardRef<HTMLDivElement, ProjectTheme>(
+  (props, ref) => {
+    useFetch();
+    const { isLoading, isError, data } = useSelector(
+      (state: any) => state.fetch
+    );
 
-  return (
-    <div
-      className="projects_container"
-      style={{
-        width: "80%",
-        height: "100%",
-        margin: "5vh auto 0",
-        color: textColor,
-        paddingTop: "5vh",
-      }}
-    >
-      <Text
-        fontSize={{ base: "2rem", md: "2.5rem", lg: "3rem" }}
-        pt={"5vh"}
-        fontWeight={"bold"}
-        textAlign={"center"}
-      >
-        Projects
-      </Text>
-      <Grid
-        templateColumns={{
-          base: "repeat(1, 1fr)",
-          md: "repeat(2, 1fr)",
-          lg: "repeat(3, 1fr)",
+    if (isLoading) return <Loading />;
+    if (isError) return <div>Error</div>;
+
+    console.log(data);
+
+    return (
+      <div
+        ref={ref}
+        style={{
+          width: "80%",
+          height: "100%",
+          margin: "5vh auto 0",
+       
         }}
-        mt={"5vh"}
-        mx={"auto"}
-        columnGap={"5vw"}
-        rowGap={"5vh"}
-        _loading={{ opacity: 0.1 }}
       >
-        {data &&
-          data.map(
-            (item: {
-              id: Key | null | undefined;
-              img: string | undefined;
-              link: string | undefined;
-              title:
-                | string
-                | number
-                | boolean
-                | ReactElement<any, string | JSXElementConstructor<any>>
-                | Iterable<ReactNode>
-                | ReactPortal
-                | null
-                | undefined;
-              description:
-                | string
-                | number
-                | boolean
-                | ReactElement<any, string | JSXElementConstructor<any>>
-                | Iterable<ReactNode>
-                | ReactPortal
-                | null
-                | undefined;
-            }) => (
+        <Text
+          fontSize={{ base: "2rem", md: "2.5rem", lg: "3rem" }}
+          pt={"5vh"}
+          fontWeight={"bold"}
+          textAlign={"center"}
+        >
+          Projects
+        </Text>
+        <Grid
+          templateColumns={{
+            base: "repeat(1, 1fr)",
+            md: "repeat(2, 1fr)",
+            lg: "repeat(3, 1fr)",
+          }}
+          mt={"5vh"}
+          mx={"auto"}
+          columnGap={"5vw"}
+          rowGap={"5vh"}
+        >
+          {data &&
+            data.map((item: ProjectItem) => (
               <GridItem
                 key={item.id}
                 onClick={() => window.open(item.link)}
                 border={`1px solid ${
-                  textColor === "black" ? "black" : "white"
+                  props.textColor === "black" ? "black" : "white"
                 }`}
                 height={"60vh"}
                 w={"100%"}
@@ -101,9 +109,9 @@ export const Projects = ({ textColor }: { textColor: string }) => {
                   <Text lineHeight={"2.4vh"}>{item.description}</Text>
                 </Box>
               </GridItem>
-            )
-          )}
-      </Grid>
-    </div>
-  );
-};
+            ))}
+        </Grid>
+      </div>
+    );
+  }
+);

@@ -23,5 +23,5 @@ export const useFetch = (): void => {
       }
     };
     getData();
-  }, [dispatch]);
+  }, []);
 }

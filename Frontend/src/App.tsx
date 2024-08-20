@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./App.css";
 import "./styles/style.css";
 import { Home } from "./components/Home";
@@ -9,12 +9,10 @@ import { Resume } from "./components/Resume";
 import { Feedback } from "./components/Feedback";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAffiliatetheme } from "@fortawesome/free-brands-svg-icons";
-import {useFetch} from "./hooks/useFetch";
 
 function App() {
   const [currentColor, setCurrentColor] = useState<boolean>(false);
   const [activeSection, setActiveSection] = useState<string>("home");
-    useFetch();
 
   const homeRef = useRef<HTMLDivElement>(null);
   const portfolioRef = useRef<HTMLDivElement>(null);
@@ -39,20 +37,23 @@ function App() {
     setActiveSection(section);
   };
 
+  useEffect(() => {
+    document.body.style.backgroundColor = currentColor ? "white" : "black";
+    document.body.style.color = currentColor ? "black" : "white";
+  }, [currentColor]);
+
   return (
     <>
       <div
         style={{
           width: "100%",
           margin: "0 auto",
-          backgroundColor: currentColor ? "white" : "black",
           position: "relative",
         }}
       >
         <nav
           id="navbar"
           style={{
-            backgroundColor: currentColor ? "white" : "black",
             position: "sticky",
             left: "10vw",
             top: "0",
@@ -66,9 +67,7 @@ function App() {
             className="logo_box"
           >
             <span className="logo">JK</span>
-            <span style={{ color: currentColor ? "black" : "white" }}>
-              JunaidKhan
-            </span>
+            <span>JunaidKhan</span>
           </Text>
 
           <div>
@@ -160,8 +159,6 @@ function App() {
           </div>
           <Button
             className="theme"
-            color={currentColor ? "white" : "black"}
-            bg={currentColor ? "black" : "white"}
             onClick={() => setCurrentColor((prev) => !prev)}
           >
             <FontAwesomeIcon icon={faAffiliatetheme} />

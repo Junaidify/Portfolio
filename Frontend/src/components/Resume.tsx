@@ -6,13 +6,17 @@ import "../styles/navbar.css";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import resume from "../../public/resume.pdf";
 
-export const Resume = forwardRef(
-  ({ textColor }: { textColor: string }, ref: any) => {
+interface ResumePropType {
+  textColor: string;
+}
+
+export const Resume = forwardRef<HTMLDivElement, ResumePropType>(
+  (props, ref: any) => {
     return (
       <div ref={ref} id="resume">
         <Text
           fontSize={{ base: "2rem", md: "3rem" }}
-          color={textColor}
+          color={props.textColor}
           m={"3vh 1vw 2vh"}
           fontWeight={"bold"}
           textAlign={"center"}
@@ -23,7 +27,7 @@ export const Resume = forwardRef(
           <Box>
             <Text
               fontSize={{ base: "1.5rem", md: "2rem" }}
-              color={textColor}
+              color={props.textColor}
               m={"1vh 1vw"}
               fontWeight={"bold"}
             >
@@ -32,7 +36,7 @@ export const Resume = forwardRef(
           </Box>
 
           <Box
-            color={textColor}
+            color={props.textColor}
             fontWeight={"bold"}
             display={"flex"}
             alignSelf={"center"}
@@ -58,7 +62,7 @@ export const Resume = forwardRef(
           </Box>
 
           <Box
-            color={textColor}
+            color={props.textColor}
             fontWeight={"bold"}
             display={"flex"}
             alignContent={"center"}
@@ -82,7 +86,7 @@ export const Resume = forwardRef(
           </Box>
 
           <Box
-            color={textColor}
+            color={props.textColor}
             fontWeight={"bold"}
             display={"flex"}
             alignItems={"center"}
@@ -96,7 +100,7 @@ export const Resume = forwardRef(
           </Box>
 
           <Box
-            color={textColor}
+            color={props.textColor}
             display={"grid"}
             gridTemplateColumns={{
               base: "repeat(1, 1fr)",
@@ -112,11 +116,13 @@ export const Resume = forwardRef(
               border={"1px solid white"}
               p={"1vh 1.2vw"}
               bg={"red"}
-              color={textColor === "black" ? "black" : "white"}
+              color={props.textColor === "black" ? "black" : "white"}
               fontSize={{ base: "1.1rem", md: "1.5rem" }}
               borderRadius={"10px"}
-              fontWeight={textColor === "black" ? "bold" : "normal"}
-              onClick={() => window.open("https://www.linkedin.com/in/junaidify-khan/")}
+              fontWeight={props.textColor === "black" ? "bold" : "normal"}
+              onClick={() =>
+                window.open("https://www.linkedin.com/in/junaidify-khan/")
+              }
             >
               LinkedIn <FontAwesomeIcon icon={faLinkedin} />
             </Text>
@@ -124,10 +130,10 @@ export const Resume = forwardRef(
               border={"1px solid white"}
               p={"1vh 1.2vw"}
               bg={"red"}
-              color={textColor === "black" ? "black" : "white"}
+              color={props.textColor === "black" ? "black" : "white"}
               fontSize={{ base: "1.1rem", md: "1.3rem" }}
               borderRadius={"10px"}
-              fontWeight={textColor === "black" ? "bold" : "normal"}
+              fontWeight={props.textColor === "black" ? "bold" : "normal"}
               onClick={() => window.open("https://github.com/junaidify")}
             >
               GitHub <FontAwesomeIcon icon={faGithub} />
@@ -136,10 +142,10 @@ export const Resume = forwardRef(
               border={"1px solid white"}
               p={{ base: "1vh 1.2vw", md: "1vh 1.5vw" }}
               bg={"red"}
-              color={textColor === "black" ? "black" : "white"}
+              color={props.textColor === "black" ? "black" : "white"}
               fontSize={{ base: "1.1rem", md: "1.3rem" }}
               borderRadius={"10px"}
-              fontWeight={textColor === "black" ? "bold" : "normal"}
+              fontWeight={props.textColor === "black" ? "bold" : "normal"}
             >
               <a href={resume} download="resume.pdf">
                 Resume <FontAwesomeIcon icon={faDownload} />

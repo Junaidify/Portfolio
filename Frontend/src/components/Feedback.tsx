@@ -10,8 +10,12 @@ import {
 import axios from "axios";
 import { FeedbackPropType } from "../redux/initialState";
 
-export const Feedback = forwardRef(
-  ({ textColor }: { textColor: string }, ref: any) => {
+interface FeedbackRefType {
+  textColor: string;
+}
+
+export const Feedback = forwardRef<HTMLDivElement, FeedbackRefType>(
+  (props, ref: any) => {
     const [formData, setFormData] = useState<FeedbackPropType>({
       name: "",
       email: "",
@@ -62,16 +66,15 @@ export const Feedback = forwardRef(
         <div>
           <Text
             fontSize={{ base: "2rem", md: "2.5rem", lg: "3rem" }}
-            color={textColor}
+            color={props.textColor}
             fontWeight={"bold"}
             textAlign={"center"}
-            mb={"5vh"}
           >
             Feedback Form
           </Text>
           <Grid className="feedback" color={"red"} m={"0 auto"} rowGap={"2vh"}>
             <GridItem>
-              <Text fontSize={"xl"} color={textColor} fontWeight={"bold"}>
+              <Text fontSize={"xl"} color={props.textColor} fontWeight={"bold"}>
                 Name
               </Text>
               <Input
@@ -82,12 +85,12 @@ export const Feedback = forwardRef(
                 mt={"1vh"}
                 size={"md"}
                 placeholder="Name"
-                borderColor={textColor === "black" ? "black" : "white"}
+                borderColor={props.textColor === "black" ? "black" : "white"}
               />
             </GridItem>
 
             <GridItem>
-              <Text fontSize={"xl"} color={textColor} fontWeight={"bold"}>
+              <Text fontSize={"xl"} color={props.textColor} fontWeight={"bold"}>
                 Email:
               </Text>
 
@@ -99,12 +102,12 @@ export const Feedback = forwardRef(
                 type="email"
                 mt={"1vh"}
                 placeholder="Email"
-                borderColor={textColor === "black" ? "black" : "white"}
+                borderColor={props.textColor === "black" ? "black" : "white"}
               />
             </GridItem>
 
             <GridItem>
-              <Text fontSize={"xl"} color={textColor} fontWeight={"bold"}>
+              <Text fontSize={"xl"} color={props.textColor} fontWeight={"bold"}>
                 Message
               </Text>
 
@@ -115,7 +118,7 @@ export const Feedback = forwardRef(
                 mt={"1vh"}
                 size={"md"}
                 placeholder="Write your message"
-                borderColor={textColor === "black" ? "black" : "white"}
+                borderColor={props.textColor === "black" ? "black" : "white"}
               />
             </GridItem>
 
@@ -124,8 +127,8 @@ export const Feedback = forwardRef(
               m={"0 auto"}
               w={"30%"}
               type="submit"
-              color={textColor === "black" ? "white" : "black"}
-              bg={textColor === "black" ? "black" : "white"}
+              color={props.textColor === "black" ? "white" : "black"}
+              bg={props.textColor === "black" ? "black" : "white"}
             >
               Send
             </Button>

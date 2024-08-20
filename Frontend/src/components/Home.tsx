@@ -6,7 +6,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import profile_img from "../images/profile-pic.png";
 import resume from "../../public/resume.pdf";
 
-const Home = forwardRef(({ textColor }: { textColor: string }, ref: any) => {
+interface HomePropType {
+  textColor: string;
+}
+
+const Home = forwardRef<HTMLDivElement, HomePropType>((props, ref: any) => {
   return (
     <div
       ref={ref}
@@ -18,26 +22,14 @@ const Home = forwardRef(({ textColor }: { textColor: string }, ref: any) => {
     >
       <main id="main">
         <div className="home_intro_wrapper">
-          <Text
-            color={textColor}
-            mt={"15vh"}
-            ml={"2vw"}
-            fontWeight={textColor === "black" ? "bold" : "normal"}
-            className="heading"
-          >
+          <Text mt={"15vh"} ml={"2vw"} className="heading">
             WELCOME TO MY WORLD
           </Text>
-          <Text
-            color={textColor}
-            ml={"2vw"}
-            className="intro"
-            fontWeight={"bold"}
-          >
+          <Text ml={"2vw"} className="intro" fontWeight={"bold"}>
             <span style={{ color: "red" }}>HI,</span>{" "}
             <span style={{ fontSize: "3rem" }}>I'M JUNAID KHAN</span>
           </Text>
           <Text
-            color={textColor}
             className="bio"
             fontSize={{ base: "1.1rem", md: "1.3rem" }}
             mt={"1vh"}
@@ -47,7 +39,6 @@ const Home = forwardRef(({ textColor }: { textColor: string }, ref: any) => {
             A FRONTEND WEB DEVELOPER
           </Text>
           <Text
-            color={textColor}
             className="home_bio"
             ml={"2vw"}
             mt={"3vh"}
@@ -61,13 +52,7 @@ const Home = forwardRef(({ textColor }: { textColor: string }, ref: any) => {
             focus on modern web technologies, I deliver efficient and innovative
             web solutions.
           </Text>
-          <Button
-            mt={"8vh"}
-            ml={"2vw"}
-            bg={"red"}
-            color={textColor}
-            className="hire_me"
-          >
+          <Button mt={"8vh"} ml={"2vw"} bg={"red"} color={props.textColor}>
             <a href={resume} download="resume.pdf">
               Resume <FontAwesomeIcon icon={faDownload} />
             </a>
@@ -75,7 +60,7 @@ const Home = forwardRef(({ textColor }: { textColor: string }, ref: any) => {
         </div>
         <div className="main_img_wrapper">
           <p id="profile_img">
-            <Image w={"100%"} h={"100%"} src={profile_img} />
+            <Image w={"100%"} h={"100%"} src={profile_img} alt="profile_img" />
           </p>
         </div>
       </main>

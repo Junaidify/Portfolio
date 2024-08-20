@@ -5,7 +5,7 @@
   padding: 0.3vh 0.8vw;
   will-change: filter;
   transition: filter 300ms;
-  background-color: red;
+  background-color: rgb(245, 15, 15);
   border-bottom-left-radius: 10px;
   border-top-right-radius: 10px;
   margin-right: 0.5vw;
@@ -23,7 +23,6 @@
   color: #fff;
   margin: 0 auto;
   padding: 2vh 1vw;
-  background-color: black;
 }
 
 #navbar .logo_box {
