@@ -58,7 +58,7 @@ export const Projects = forwardRef<HTMLDivElement, ProjectTheme>(
         style={{
           width: "80%",
           height: "100%",
-          margin: "5vh auto 0",
+          margin: "0 auto",
        
         }}
       >
