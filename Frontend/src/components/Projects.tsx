@@ -7,7 +7,6 @@ import {
   ReactNode,
   ReactPortal,
   forwardRef,
-  useMemo,
 } from "react";
 import { Loading } from "./Loading";
 import { Text, GridItem, Box, Image, Grid } from "@chakra-ui/react";
