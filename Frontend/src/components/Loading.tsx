@@ -2,7 +2,7 @@ import { Box, Text, Grid, Skeleton, SkeletonText } from "@chakra-ui/react";
 
 export const Loading = () => {
   return (
-    <Box>
+    <Box mt={"3vh"}>
       <Text
         fontSize={"3rem"}
         pt={"5vh"}
