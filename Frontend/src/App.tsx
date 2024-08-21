@@ -5,12 +5,11 @@ import { Button, Text } from "@chakra-ui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAffiliatetheme } from "@fortawesome/free-brands-svg-icons";
 
-const Home = lazy(() => import( "./components/Home"));
-const Projects = lazy(() => import( "./components/Projects"));
-const Skills = lazy(() => import( "./components/Skills"));
-const Resume = lazy(() => import( "./components/Resume"));
-const Feedback = lazy(() => import( "./components/Feedback"));
-
+const Home = lazy(() => import("./components/Home"));
+const Projects = lazy(() => import("./components/Projects"));
+const Skills = lazy(() => import("./components/Skills"));
+const Resume = lazy(() => import("./components/Resume"));
+const Feedback = lazy(() => import("./components/Feedback"));
 
 function App() {
   const [currentColor, setCurrentColor] = useState<boolean>(false);
@@ -46,146 +45,155 @@ function App() {
 
   return (
     <>
-    <Suspense fallback={<div>Loading...</div>}>
-
-    </Suspense>
-      <div
-        style={{
-          width: "100%",
-          margin: "0 auto",
-          position: "relative",
-        }}
-      >
-        <nav
-          id="navbar"
+      <Suspense fallback={<div>Loading...</div>}>
+        <div
           style={{
-            position: "sticky",
-            left: "10vw",
-            top: "0",
+            width: "100%",
+            margin: "0 auto",
+            position: "relative",
           }}
         >
-          <Text
-            fontSize={{ base: "1.5rem", md: "2rem" }}
-            fontWeight={"bold"}
-            fontStyle={"italic"}
-            color={"white"}
-            className="logo_box"
+          <nav
+            id="navbar"
+            style={{
+              position: "sticky",
+              left: "10vw",
+              top: "0",
+            }}
           >
-            <span className="logo">JK</span>
-            <span>JunaidKhan</span>
-          </Text>
+            <Text
+              fontSize={{ base: "1.5rem", md: "2rem" }}
+              fontWeight={"bold"}
+              fontStyle={"italic"}
+              color={"white"}
+              className="logo_box"
+            >
+              <span className="logo">JK</span>
+              <span>JunaidKhan</span>
+            </Text>
 
-          <div>
-            <Text fontWeight={"bold"} color={"red"}>
-              <Button
-                variant="link"
-                onClick={() => handleNavClick("home", homeRef)}
-                color={
-                  currentColor
-                    ? activeSection === "home"
+            <div>
+              <Text fontWeight={"bold"} color={"red"}>
+                <Button
+                  variant="link"
+                  onClick={() => handleNavClick("home", homeRef)}
+                  color={
+                    currentColor
+                      ? activeSection === "home"
+                        ? "red"
+                        : "black"
+                      : activeSection === "home"
                       ? "red"
-                      : "black"
-                    : activeSection === "home"
-                    ? "red"
-                    : "white"
-                }
-              >
-                Home
-              </Button>
-            </Text>
-            <Text fontWeight={"bold"}>
-              <Button
-                variant="link"
-                onClick={() => handleNavClick("portfolio", portfolioRef)}
-                color={
-                  currentColor
-                    ? activeSection === "portfolio"
+                      : "white"
+                  }
+                >
+                  Home
+                </Button>
+              </Text>
+              <Text fontWeight={"bold"}>
+                <Button
+                  variant="link"
+                  onClick={() => handleNavClick("portfolio", portfolioRef)}
+                  color={
+                    currentColor
+                      ? activeSection === "portfolio"
+                        ? "red"
+                        : "black"
+                      : activeSection === "portfolio"
                       ? "red"
-                      : "black"
-                    : activeSection === "portfolio"
-                    ? "red"
-                    : "white"
-                }
-              >
-                Projects
-              </Button>
-            </Text>
-            <Text fontWeight={"bold"}>
-              <Button
-                variant="link"
-                onClick={() => handleNavClick("skills", skillsRef)}
-                color={
-                  currentColor
-                    ? activeSection === "skills"
+                      : "white"
+                  }
+                >
+                  Projects
+                </Button>
+              </Text>
+              <Text fontWeight={"bold"}>
+                <Button
+                  variant="link"
+                  onClick={() => handleNavClick("skills", skillsRef)}
+                  color={
+                    currentColor
+                      ? activeSection === "skills"
+                        ? "red"
+                        : "black"
+                      : activeSection === "skills"
                       ? "red"
-                      : "black"
-                    : activeSection === "skills"
-                    ? "red"
-                    : "white"
-                }
-              >
-                Skills
-              </Button>
-            </Text>
-            <Text fontWeight={"bold"}>
-              <Button
-                variant="link"
-                onClick={() => handleNavClick("resume", resumeRef)}
-                color={
-                  currentColor
-                    ? activeSection === "resume"
+                      : "white"
+                  }
+                >
+                  Skills
+                </Button>
+              </Text>
+              <Text fontWeight={"bold"}>
+                <Button
+                  variant="link"
+                  onClick={() => handleNavClick("resume", resumeRef)}
+                  color={
+                    currentColor
+                      ? activeSection === "resume"
+                        ? "red"
+                        : "black"
+                      : activeSection === "resume"
                       ? "red"
-                      : "black"
-                    : activeSection === "resume"
-                    ? "red"
-                    : "white"
-                }
-              >
-                Resume/Connect
-              </Button>
-            </Text>
-            <Text fontWeight={"bold"} cursor={"pointer"}>
-              <Button
-                variant="link"
-                onClick={() => handleNavClick("feedback", feedbackRef)}
-                color={
-                  currentColor
-                    ? activeSection === "feedback"
+                      : "white"
+                  }
+                >
+                  Resume/Connect
+                </Button>
+              </Text>
+              <Text fontWeight={"bold"} cursor={"pointer"}>
+                <Button
+                  variant="link"
+                  onClick={() => handleNavClick("feedback", feedbackRef)}
+                  color={
+                    currentColor
+                      ? activeSection === "feedback"
+                        ? "red"
+                        : "black"
+                      : activeSection === "feedback"
                       ? "red"
-                      : "black"
-                    : activeSection === "feedback"
-                    ? "red"
-                    : "white"
-                }
-              >
-                Feedback
-              </Button>
-            </Text>
+                      : "white"
+                  }
+                >
+                  Feedback
+                </Button>
+              </Text>
+            </div>
+            <Button
+              className="theme"
+              onClick={() => setCurrentColor((prev) => !prev)}
+            >
+              <FontAwesomeIcon icon={faAffiliatetheme} />
+            </Button>
+          </nav>
+
+          <div ref={homeRef} id="home">
+            <Suspense fallback={<div>Loading Home...</div>}>
+              <Home />
+            </Suspense>
           </div>
-          <Button
-            className="theme"
-            onClick={() => setCurrentColor((prev) => !prev)}
-          >
-            <FontAwesomeIcon icon={faAffiliatetheme} />
-          </Button>
-        </nav>
-
-        <div ref={homeRef} id="home">
-          <Home textColor={currentColor ? "black" : "white"} />
+          <div ref={portfolioRef} id="portfolio">
+            <Suspense fallback={<div>Loading Projects...</div>}>
+              <Projects textColor={currentColor ? "black" : "white"} />
+            </Suspense>
+          </div>
+          <div ref={skillsRef} id="skills">
+            <Suspense fallback={<div>Loading Skills...</div>}>
+              <Skills textColor={currentColor ? "black" : "white"} />
+            </Suspense>
+          </div>
+          <div ref={resumeRef} id="resume">
+            <Suspense fallback={<div>Loading Resume...</div>}>
+              <Resume textColor={currentColor ? "black" : "white"} />
+            </Suspense>
+          </div>
+          <div ref={feedbackRef} id="feedback">
+            <Suspense fallback={<div>Loading Feedback...</div>}>
+              <Feedback textColor={currentColor ? "black" : "white"} />
+            </Suspense>
+          </div>
         </div>
-        <div ref={portfolioRef} id="portfolio">
-          <Projects textColor={currentColor ? "black" : "white"} />
-        </div>
-        <div ref={skillsRef} id="skills">
-          <Skills textColor={currentColor ? "black" : "white"} />
-        </div>
-        <div ref={resumeRef} id="resume">
-          <Resume textColor={currentColor ? "black" : "white"} />
-        </div>
-        <div ref={feedbackRef} id="feedback">
-          <Feedback textColor={currentColor ? "black" : "white"} />
-        </div>
-      </div>
+      </Suspense>
     </>
   );
 }

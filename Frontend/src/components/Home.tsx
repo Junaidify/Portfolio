@@ -6,11 +6,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import profile_img from "../images/profile-pic.png";
 import resume from "../../public/resume.pdf";
 
-interface HomePropType {
-  textColor: string;
-}
 
-const Home = forwardRef<HTMLDivElement, HomePropType>((props, ref: any) => {
+const Home = forwardRef<HTMLDivElement, object>((_, ref: any) => {
   return (
     <div
       ref={ref}
