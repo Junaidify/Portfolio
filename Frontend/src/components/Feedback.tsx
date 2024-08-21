@@ -14,7 +14,7 @@ interface FeedbackRefType {
   textColor: string;
 }
 
-export const Feedback = forwardRef<HTMLDivElement, FeedbackRefType>(
+const Feedback = forwardRef<HTMLDivElement, FeedbackRefType>(
   (props, ref: any) => {
     const [formData, setFormData] = useState<FeedbackPropType>({
       name: "",
@@ -62,19 +62,18 @@ export const Feedback = forwardRef<HTMLDivElement, FeedbackRefType>(
     }, [formData]);
 
     return (
-      <div ref={ref} id="feedback_wrapper">
+      <div ref={ref} id="feedback_wrapper" >
         <div>
           <Text
-            fontSize={{ base: "2rem", md: "2.5rem", lg: "3rem" }}
-            color={props.textColor}
+            fontSize={{ base: "2.1rem", md: "2.5rem", lg: "3rem" }}
             fontWeight={"bold"}
             textAlign={"center"}
           >
             Feedback Form
           </Text>
-          <Grid className="feedback" color={"red"} m={"0 auto"} rowGap={"2vh"}>
+          <Grid  m={"0 auto"} rowGap={"2vh"} mt={"5vh"}>
             <GridItem>
-              <Text fontSize={"xl"} color={props.textColor} fontWeight={"bold"}>
+              <Text fontSize={"xl"}  fontWeight={"bold"}>
                 Name
               </Text>
               <Input
@@ -90,7 +89,7 @@ export const Feedback = forwardRef<HTMLDivElement, FeedbackRefType>(
             </GridItem>
 
             <GridItem>
-              <Text fontSize={"xl"} color={props.textColor} fontWeight={"bold"}>
+              <Text fontSize={"xl"}  fontWeight={"bold"}>
                 Email:
               </Text>
 
@@ -107,7 +106,7 @@ export const Feedback = forwardRef<HTMLDivElement, FeedbackRefType>(
             </GridItem>
 
             <GridItem>
-              <Text fontSize={"xl"} color={props.textColor} fontWeight={"bold"}>
+              <Text fontSize={"xl"}  fontWeight={"bold"}>
                 Message
               </Text>
 
@@ -138,3 +137,5 @@ export const Feedback = forwardRef<HTMLDivElement, FeedbackRefType>(
     );
   }
 );
+
+export default Feedback;

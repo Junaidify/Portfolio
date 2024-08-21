@@ -42,8 +42,8 @@ const Home = forwardRef<HTMLDivElement, HomePropType>((props, ref: any) => {
             className="home_bio"
             ml={"2vw"}
             mt={"3vh"}
-            lineHeight={"2.7vh"}
-            fontSize={"1.1rem"}
+            lineHeight={{ base: "1.5rem", md: "2rem" }}
+            fontSize={{ base: "1rem", md: "1.1rem" }}
           >
             I’m a frontend web developer with expertise in HTML, CSS,
             JavaScript, Typescript, ReactJS, and Redux. I excel in using
@@ -52,7 +52,7 @@ const Home = forwardRef<HTMLDivElement, HomePropType>((props, ref: any) => {
             focus on modern web technologies, I deliver efficient and innovative
             web solutions.
           </Text>
-          <Button mt={"8vh"} ml={"2vw"} bg={"red"} color={props.textColor}>
+          <Button mt={"8vh"} ml={"2vw"} bg={"red"} color={"white"}>
             <a href={resume} download="resume.pdf">
               Resume <FontAwesomeIcon icon={faDownload} />
             </a>
@@ -68,4 +68,4 @@ const Home = forwardRef<HTMLDivElement, HomePropType>((props, ref: any) => {
   );
 });
 
-export { Home };
+export default Home;

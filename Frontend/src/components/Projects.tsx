@@ -1,45 +1,22 @@
 import { useSelector } from "react-redux";
 import { useFetch } from "../hooks/useFetch";
-import {
-  Key,
-  ReactElement,
-  JSXElementConstructor,
-  ReactNode,
-  ReactPortal,
-  forwardRef,
-} from "react";
+import { Key, forwardRef } from "react";
 import { Loading } from "./Loading";
 import { Text, GridItem, Box, Image, Grid } from "@chakra-ui/react";
 
 interface ProjectItem {
-  id: Key | null | undefined;
-  img: string | undefined;
-  link: string | undefined;
-  title:
-    | string
-    | number
-    | boolean
-    | ReactElement<any, string | JSXElementConstructor<any>>
-    | Iterable<ReactNode>
-    | ReactPortal
-    | null
-    | undefined;
-  description:
-    | string
-    | number
-    | boolean
-    | ReactElement<any, string | JSXElementConstructor<any>>
-    | Iterable<ReactNode>
-    | ReactPortal
-    | null
-    | undefined;
+  id: Key | string;
+  img: string;
+  link: string;
+  title: string;
+  description: string;
 }
 
 interface ProjectTheme {
   textColor: string;
 }
 
-export const Projects = forwardRef<HTMLDivElement, ProjectTheme>(
+const Projects = forwardRef<HTMLDivElement, ProjectTheme>(
   (props, ref) => {
     useFetch();
     const { isLoading, isError, data } = useSelector(
@@ -58,7 +35,6 @@ export const Projects = forwardRef<HTMLDivElement, ProjectTheme>(
           width: "80%",
           height: "100%",
           margin: "3vh auto 0",
-       
         }}
       >
         <Text
@@ -104,7 +80,9 @@ export const Projects = forwardRef<HTMLDivElement, ProjectTheme>(
                   columnGap={"2vw"}
                   m={"2vh 1vw"}
                 >
-                  <Text fontSize={"1.5rem"}>{item.title}</Text>
+                  <Text fontSize={"1.5rem"} fontWeight={"bold"}>
+                    {item.title}
+                  </Text>
                   <Text lineHeight={"2.4vh"}>{item.description}</Text>
                 </Box>
               </GridItem>
@@ -114,3 +92,5 @@ export const Projects = forwardRef<HTMLDivElement, ProjectTheme>(
     );
   }
 );
+
+export default Projects;

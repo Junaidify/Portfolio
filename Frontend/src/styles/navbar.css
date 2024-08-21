@@ -14,8 +14,8 @@
 
 #feedback_wrapper {
   width: 80%;
-  margin: 10vh auto 0;
-  height: 90vh;
+  margin: 5vh auto 0;
+  height: 70vh;
   position: relative;
 }
 
@@ -31,7 +31,6 @@
   #resume {
     width: 90%;
     margin: 7vh auto;
-    height: fit-content;
     padding-top: 3vh;
   }
 
@@ -47,13 +46,11 @@
   }
 }
 
-
 @media screen and (min-width: 769px) and (max-width: 1024px) {
   #skills,
   #resume {
     width: 90%;
     margin: 7vh auto;
-    height: fit-content;
     padding-top: 3vh;
   }
 

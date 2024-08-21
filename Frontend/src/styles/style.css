@@ -4,8 +4,8 @@
   height: 6em;
   padding: 0.3vh 0.8vw;
   will-change: filter;
+  background-color: red;
   transition: filter 300ms;
-  background-color: rgb(245, 15, 15);
   border-bottom-left-radius: 10px;
   border-top-right-radius: 10px;
   margin-right: 0.5vw;
@@ -36,9 +36,7 @@
   grid-area: navbar;
 }
 
-.name_logo {
-  color: rgb(214, 16, 16);
-}
+
 
 .theme {
   background-color: rgb(214, 16, 16);
@@ -48,6 +46,8 @@
   border: none;
   grid-area: theme;
 }
+
+
 
 /* --------------- media queries for navbar ------------- */
 

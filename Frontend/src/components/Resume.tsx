@@ -10,13 +10,12 @@ interface ResumePropType {
   textColor: string;
 }
 
-export const Resume = forwardRef<HTMLDivElement, ResumePropType>(
+const Resume = forwardRef<HTMLDivElement, ResumePropType>(
   (props, ref: any) => {
     return (
       <div ref={ref} id="resume">
         <Text
           fontSize={{ base: "2rem", md: "3rem" }}
-          color={props.textColor}
           m={"3vh 1vw 2vh"}
           fontWeight={"bold"}
           textAlign={"center"}
@@ -27,7 +26,6 @@ export const Resume = forwardRef<HTMLDivElement, ResumePropType>(
           <Box>
             <Text
               fontSize={{ base: "1.5rem", md: "2rem" }}
-              color={props.textColor}
               m={"1vh 1vw"}
               fontWeight={"bold"}
             >
@@ -36,7 +34,6 @@ export const Resume = forwardRef<HTMLDivElement, ResumePropType>(
           </Box>
 
           <Box
-            color={props.textColor}
             fontWeight={"bold"}
             display={"flex"}
             alignSelf={"center"}
@@ -62,7 +59,6 @@ export const Resume = forwardRef<HTMLDivElement, ResumePropType>(
           </Box>
 
           <Box
-            color={props.textColor}
             fontWeight={"bold"}
             display={"flex"}
             alignContent={"center"}
@@ -85,12 +81,7 @@ export const Resume = forwardRef<HTMLDivElement, ResumePropType>(
             </Text>
           </Box>
 
-          <Box
-            color={props.textColor}
-            fontWeight={"bold"}
-            display={"flex"}
-            alignItems={"center"}
-          >
+          <Box fontWeight={"bold"} display={"flex"} alignItems={"center"}>
             <Text fontSize={{ base: "1.2rem", md: "1.5rem" }} m={"1vh 1vw"}>
               Location:
             </Text>
@@ -100,7 +91,6 @@ export const Resume = forwardRef<HTMLDivElement, ResumePropType>(
           </Box>
 
           <Box
-            color={props.textColor}
             display={"grid"}
             gridTemplateColumns={{
               base: "repeat(1, 1fr)",
@@ -111,15 +101,15 @@ export const Resume = forwardRef<HTMLDivElement, ResumePropType>(
             rowGap={"1vh"}
             textAlign={"center"}
             mt={"6vh"}
+            
           >
             <Text
               border={"1px solid white"}
               p={"1vh 1.2vw"}
               bg={"red"}
-              color={props.textColor === "black" ? "black" : "white"}
               fontSize={{ base: "1.1rem", md: "1.5rem" }}
               borderRadius={"10px"}
-              fontWeight={props.textColor === "black" ? "bold" : "normal"}
+              color={"white"}
               onClick={() =>
                 window.open("https://www.linkedin.com/in/junaidify-khan/")
               }
@@ -130,10 +120,9 @@ export const Resume = forwardRef<HTMLDivElement, ResumePropType>(
               border={"1px solid white"}
               p={"1vh 1.2vw"}
               bg={"red"}
-              color={props.textColor === "black" ? "black" : "white"}
               fontSize={{ base: "1.1rem", md: "1.3rem" }}
               borderRadius={"10px"}
-              fontWeight={props.textColor === "black" ? "bold" : "normal"}
+              color={"white"}
               onClick={() => window.open("https://github.com/junaidify")}
             >
               GitHub <FontAwesomeIcon icon={faGithub} />
@@ -142,10 +131,9 @@ export const Resume = forwardRef<HTMLDivElement, ResumePropType>(
               border={"1px solid white"}
               p={{ base: "1vh 1.2vw", md: "1vh 1.5vw" }}
               bg={"red"}
-              color={props.textColor === "black" ? "black" : "white"}
               fontSize={{ base: "1.1rem", md: "1.3rem" }}
               borderRadius={"10px"}
-              fontWeight={props.textColor === "black" ? "bold" : "normal"}
+              color={"white"}
             >
               <a href={resume} download="resume.pdf">
                 Resume <FontAwesomeIcon icon={faDownload} />
@@ -157,3 +145,5 @@ export const Resume = forwardRef<HTMLDivElement, ResumePropType>(
     );
   }
 );
+
+export default Resume;

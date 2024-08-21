@@ -1,14 +1,16 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { lazy, Suspense, useEffect, useRef, useState } from "react";
 import "./App.css";
 import "./styles/style.css";
-import { Home } from "./components/Home";
-import { Projects } from "./components/Projects";
 import { Button, Text } from "@chakra-ui/react";
-import { Skills } from "./components/Skills";
-import { Resume } from "./components/Resume";
-import { Feedback } from "./components/Feedback";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAffiliatetheme } from "@fortawesome/free-brands-svg-icons";
+
+const Home = lazy(() => import( "./components/Home"));
+const Projects = lazy(() => import( "./components/Projects"));
+const Skills = lazy(() => import( "./components/Skills"));
+const Resume = lazy(() => import( "./components/Resume"));
+const Feedback = lazy(() => import( "./components/Feedback"));
+
 
 function App() {
   const [currentColor, setCurrentColor] = useState<boolean>(false);
@@ -44,6 +46,9 @@ function App() {
 
   return (
     <>
+    <Suspense fallback={<div>Loading...</div>}>
+
+    </Suspense>
       <div
         style={{
           width: "100%",
