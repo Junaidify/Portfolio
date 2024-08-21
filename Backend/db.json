@@ -3,7 +3,7 @@
     {
       "id": "1",
       "title": "World Health Organization",
-      "link" : "https://65db52b932ace3e41ed6fa9a--vermillion-genie-5355f3.netlify.app/",
+      "link" : "./public/image.png",
       "img": "https://res.cloudinary.com/dn7js4wyp/image/upload/v1723401668/zeo0xjxyhi4b1wjwfcx5.png",
       "description": "This is a \"Collaborative\" project developed by a team of four in five days during Masai School's Construct Week. It showcases the coding and testing skills we acquired at Masai School. We cloned the WHO website, which promotes global health and awareness."
     },
