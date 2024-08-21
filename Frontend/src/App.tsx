@@ -184,7 +184,7 @@ function App() {
           </div>
           <div ref={resumeRef} id="resume">
             <Suspense fallback={<div>Loading Resume...</div>}>
-              <Resume textColor={currentColor ? "black" : "white"} />
+              <Resume  />
             </Suspense>
           </div>
           <div ref={feedbackRef} id="feedback">
