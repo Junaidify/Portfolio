@@ -1,0 +1,414 @@
+#app_parent {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+#app_wrapper,
+#dashboard_wrapper {
+  background-color: black;
+}
+
+#app_wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+#navbar {
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 30% 40% 30%;
+  grid-template-areas: "navbar_logo navbar_links navbar_cv";
+  row-gap: 1dvh;
+  padding: 2dvh 0;
+}
+
+.navbar_logo {
+  font-size: 2rem;
+  text-align: center;
+  font-weight: bold;
+  color: var(--secondary-color);
+  grid-area: navbar_logo;
+}
+
+.navbar_links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  grid-area: navbar_links;
+}
+
+.navbar_links > li {
+  font-size: 2rem;
+  text-decoration: none;
+  list-style: none;
+  color: var(--white-color);
+  position: relative; 
+  padding: 0.5dvh 1dvw;
+  border-radius: 5px;
+}
+
+.navbar_cv {
+  text-align: center;
+  align-self: center;
+  font-size: 2rem;
+  color: var(--white-color);
+  grid-area: navbar_cv;
+}
+
+.navbar_cv:hover {
+  background-color: var(--secondary-color);
+  position: relative;
+  padding: 0.5dvh 1dvw;
+  border-radius: 5px;
+}
+
+/* ---------------- Media Query ------------------ */
+
+@media screen and (max-width: 430px) {
+  #navbar {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "navbar_logo navbar_cv"
+      "navbar_links navbar_links";
+  }
+
+  .navbar_logo {
+    font-size: 1.5rem;
+  }
+
+  .navbar_cv,
+  .navbar_links > li {
+    font-size: 0.8rem;
+  }
+
+  .navbar_cv {
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 431px) and (max-width: 1024px) {
+  #navbar {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "navbar_logo navbar_cv"
+      "navbar_links navbar_links";
+  }
+
+  .navbar_logo {
+    font-size: 2rem;
+    text-align: left;
+    margin-left: 3dvw;
+  }
+
+  .navbar_links > li {
+    font-size: 1.2rem;
+  }
+
+  .navbar_cv {
+    text-align: center;
+    margin-right: 3dvw;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  #navbar {
+    grid-template-columns: 30% 60% 10%;
+    grid-template-areas: "navbar_logo  navbar_links navbar_cv";
+  }
+
+  .navbar_logo {
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  .navbar_links > li {
+    font-size: 1.2rem;
+  }
+
+  .navbar_cv {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+  }
+}
+
+/* ------------------  Dashboard Starts ----------------- */
+
+#dashboard {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  grid-template-areas: "intro myimg";
+  justify-content: space-evenly;
+  align-content: space-between;
+  column-gap: 2dvw;
+  width: 80%;
+  height: fit-content;
+  margin: 0 auto;
+  padding: 5dvh 5dvw;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: flex-start;
+  row-gap: 1dvh;
+  grid-area: intro;
+}
+
+.intro > div:nth-child(1) {
+  font-size: 2rem;
+  color: var(--white-color);
+}
+
+.intro > div:nth-child(2) {
+  font-size: 5rem;
+  color: var(--white-color);
+  font-weight: bold;
+}
+
+.intro > div:nth-child(3) {
+  font-size: 1.5rem;
+  color: var(--white-color);
+}
+
+.intro > div:nth-child(4) {
+  font-size: 1rem;
+  color: var(--white-color);
+  width: 90%;
+  border-radius: 5px;
+  line-height: 1.5rem;
+}
+
+.intro_links {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  column-gap: 1dvw;
+  margin-top: 5dvh;
+}
+
+.intro_links > a {
+  padding: 1dvh 1.5dvw;
+  color: var(--white-color);
+  font-size: 1.5rem;
+  background-color: var(--secondary-color);
+  border-radius: 5px;
+  position: relative;
+}
+
+.intro_links > a::before,
+.navbar_links > li::before, 
+.navbar_cv::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background-color: white;
+  background-image: linear-gradient(
+    to bottom,
+    rgb(255, 255, 255, 0.3) -50%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  clip-path: polygon(30% 0%, 70% 0%, 100% 100%, 0% 100%);
+  opacity: 0.4;
+}
+
+.intro_links > a:hover::before, 
+.navbar_links > li:hover::before, 
+.navbar_cv:hover::before {
+  width: 100%;
+  height: 100%;
+  transition: 0.5s;
+}
+
+.intro_links > a:hover, 
+.navbar_links > li:hover, 
+.navbar_cv:hover {
+  color: white;
+  text-shadow: 0 0 15px #00f0ff, 0 0 30px #00f0ff, 0 0 45x #00f0ff,
+    0 0 60px #00f0ff;
+  filter: drop-shadow(0 0 0.75rem #00f0ff) drop-shadow(0 0 0.75rem #00f0ff);
+  background-color: #00f0ff;
+  transition: 0.5s;
+}
+
+.myimg {
+  grid-area: myimg;
+}
+
+.myimg > div {
+  width: 90%;
+  height: 80%;
+  margin: auto;
+  background-color: transparent;
+  clip-path: polygon(
+    30% 0%,
+    70% 0%,
+    100% 30%,
+    100% 70%,
+    70% 100%,
+    30% 100%,
+    0% 70%,
+    0% 30%
+  );
+}
+
+.myimg > div > img {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 0 0.75rem var(--secondary-color));
+}
+
+/* ----------- Media Queries ------------- */
+
+@media screen and (max-width: 430px) {
+  #dashboard {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas:
+      "myimg"
+      "intro";
+    height: fit-content;
+  }
+
+  .intro > div:nth-child(1) {
+    font-size: 1rem;
+  }
+
+  .intro > div:nth-child(2) {
+    font-size: 2.5rem;
+  }
+
+  .intro > div:nth-child(3) {
+    font-size: 1.2rem;
+  }
+
+  .intro > div:nth-child(4) {
+    font-size: 0.8rem;
+    line-height: 1.1rem;
+  }
+
+  .intro_links {
+    column-gap: 5dvw;
+    margin-top: 5dvh;
+  }
+
+  .intro_links > a {
+    padding: 1dvh 4dvw;
+    font-size: 1.2rem;
+  }
+
+  .myimg {
+    grid-area: myimg;
+  }
+
+  .myimg > div {
+    width: 100%;
+    height: 80%;
+  }
+}
+
+@media screen and (min-width: 431px) and (max-width: 1024px) {
+  #dashboard {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas:
+      "myimg"
+      "intro";
+    height: fit-content;
+  }
+
+  .intro > div:nth-child(1) {
+    font-size: 2rem;
+  }
+
+  .intro > div:nth-child(2) {
+    font-size: 3rem;
+  }
+
+  .intro > div:nth-child(3) {
+    font-size: 1.6rem;
+  }
+
+  .intro > div:nth-child(4) {
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+  }
+
+  .intro_links {
+    column-gap: 3dvw;
+    margin-top: 3dvh;
+  }
+
+  .intro_links > a {
+    padding: 1dvh 3dvw;
+    font-size: 1.5rem;
+  }
+
+  .myimg {
+    grid-area: myimg;
+  }
+
+  .myimg > div {
+    width: 50%;
+    height: 80%;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  #dashboard {
+    grid-template-columns: 60% 40%;
+    grid-template-areas: "intro myimg";
+    height: fit-content;
+    width: 70%;
+    padding-top: 10dvh;
+  }
+
+  .intro > div:nth-child(1) {
+    font-size: 2.5rem;
+  }
+
+  .intro > div:nth-child(2) {
+    font-size: 4rem;
+  }
+
+  .intro > div:nth-child(3) {
+    font-size: 2rem;
+  }
+
+  .intro > div:nth-child(4) {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .intro_links {
+    column-gap: 1dvw;
+    margin-top: 10dvh;
+  }
+
+  .intro_links > a {
+    padding: 1dvh 1.5dvw;
+    font-size: 1.5rem;
+  }
+
+  .myimg {
+    grid-area: myimg;
+  }
+
+  .myimg > div {
+    width: 90%;
+    height: 80%;
+  }
+}
