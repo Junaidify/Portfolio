@@ -254,7 +254,7 @@
   width: 90%;
   height: 80%;
   margin: auto;
-  background-color: transparent;
+  background-color: var(--secondary-color);
   clip-path: polygon(
     30% 0%,
     70% 0%,
@@ -265,6 +265,7 @@
     0% 70%,
     0% 30%
   );
+
 }
 
 .myimg > div > img {
