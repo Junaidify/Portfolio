@@ -1,6 +1,6 @@
 import carbuddy from "../images/carbuddy.png";
 import wine from "../images/second.png";
-import weather from "../images/whether.png";
+import weather from "../images/weather.png";
 import aidex from "../images/aidex.png";
 
 import "../styles/projectandskills.css";
