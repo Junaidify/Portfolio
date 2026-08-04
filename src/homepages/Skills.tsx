@@ -37,7 +37,7 @@ const Skills = () => {
             </div>
             <div className="timeline-node node-teal"></div>
             <div className="timeline-right">
-              <div className="timeline-role">Full Stack Developer</div>
+              <div className="timeline-role">Developed End-to-End</div>
               <p className="timeline-desc">
                 Architected Spring Boot microservices with Spring Security 6, stateless JWT & OAuth 2.0. Integrated Razorpay payment webhooks and built a vector search RAG query engine using LangChain and pgvector.
               </p>
@@ -52,7 +52,7 @@ const Skills = () => {
             </div>
             <div className="timeline-node node-orange"></div>
             <div className="timeline-right">
-              <div className="timeline-role">Backend Developer</div>
+              <div className="timeline-role">Developed End-to-End</div>
               <p className="timeline-desc">
                 Engineered automated Python media processing pipelines using FFmpeg and OpenAI Whisper for speech-to-text audio transcription, timestamped SRT subtitle burn-in, and dynamic aspect ratio transformations.
               </p>
@@ -67,7 +67,7 @@ const Skills = () => {
             </div>
             <div className="timeline-node node-gold"></div>
             <div className="timeline-right">
-              <div className="timeline-role">Open Source Author</div>
+              <div className="timeline-role">Developed End-to-End</div>
               <p className="timeline-desc">
                 Created and published a lightweight LLM text preprocessing toolkit on PyPI for sanitizing prompt inputs and reducing token consumption prior to model tokenization.
               </p>
