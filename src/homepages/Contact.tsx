@@ -38,7 +38,7 @@ const Contact = () => {
         .catch((error: any) => {
           setLoading(false);
           console.error("Error sending email:", error);
-          setToastMsg("Message sent successfully!");
+          setToastMsg("Failed to send message. Please try again or reach out via LinkedIn/GitHub.");
           setTimeout(() => setToastMsg(null), 4000);
         });
     }
